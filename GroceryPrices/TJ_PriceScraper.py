@@ -31,11 +31,12 @@ driver.quit() # ends session
 soup = BeautifulSoup(page, 'html.parser')
 
 # finds all <li> tags with given class attribute 
-products = soup.find('ul', class_='ProductList_productList__list__3-dGs')
+html_product_name = soup.find_all('h2', class_='ProductCard_card__title__text__uiWLe')
+html_price_quantity = soup.find_all('div', class_='ProductPrice_productPrice__1Rq1r ProductCard_card__productPrice__1W4Le')
 
-print(products)
-print(len(products))
-# for i in all_ul:
-#     print(i)
-#     print('______________')
+print(html_product_name)
 
+product_names = [i.get_text() for i in html_product_name]
+price_quantity = [i.get_text() for i in html_price_quantity]
+print(product_names)
+print(price_quantity)
