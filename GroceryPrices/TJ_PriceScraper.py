@@ -4,6 +4,10 @@ import requests
 import time
 from selenium import webdriver
 
+def get_product_href(bs4_object, class_val, tag):
+    html = bs4_object.find_all(tag, class_=class_val)
+    return [i.get('href') for i in html]
+
 url = 'https://www.traderjoes.com/home/products/category/food-8'
 #url = 'http://olympus.realpython.org/profiles/dionysus'
 #url = 'https://coinmarketcap.com/'
@@ -28,13 +32,15 @@ soup = BeautifulSoup(page, 'html.parser')
 html_product_name = soup.find_all('h2', class_='ProductCard_card__title__text__uiWLe')
 html_price_quantity = soup.find_all('div', class_='ProductPrice_productPrice__1Rq1r ProductCard_card__productPrice__1W4Le')
 
-print(html_product_name)
+print(type(html_product_name))
+for i in html_product_name:
+    print(i.find('a').get('href'))
 
-product_names = [i.get_text() for i in html_product_name]
-price_quantity = [i.get_text() for i in html_price_quantity]
+# product_names = [i.get_text() for i in html_product_name]
+# price_quantity = [i.get_text() for i in html_price_quantity]
 
-print()
+# print()
 
-print(product_names)
-print(price_quantity)
+# print(product_names)
+# print(price_quantity)
 
