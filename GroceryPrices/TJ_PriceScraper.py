@@ -32,15 +32,16 @@ soup = BeautifulSoup(page, 'html.parser')
 html_product_name = soup.find_all('h2', class_='ProductCard_card__title__text__uiWLe')
 html_price_quantity = soup.find_all('div', class_='ProductPrice_productPrice__1Rq1r ProductCard_card__productPrice__1W4Le')
 
-print(type(html_product_name))
-for i in html_product_name:
-    print(i.find('a').get('href'))
+print(html_product_name)    
 
-# product_names = [i.get_text() for i in html_product_name]
+product_names = [i.get_text() for i in html_product_name]
 # price_quantity = [i.get_text() for i in html_price_quantity]
+# links = [i.find('a').get('href') for i in html_product_name]
 
 # print()
 
 # print(product_names)
 # print(price_quantity)
+
+### Trying to click page indexer thing at bottom of page
 
