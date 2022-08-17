@@ -15,7 +15,6 @@ url = 'https://www.traderjoes.com/home/products/category/food-8'
 print(requests.get(url)) # returns status code; 200 is sucessful request
 
 # making webdriver instance for Chrome browser
-# driver = webdriver.Chrome(chrome_options=options)
 driver = webdriver.Chrome()
 
 # going to website
@@ -42,6 +41,3 @@ product_names = [i.get_text() for i in html_product_name]
 
 # print(product_names)
 # print(price_quantity)
-
-### Trying to click page indexer thing at bottom of page
-

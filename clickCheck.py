@@ -16,7 +16,7 @@ driver.get(url)
 time.sleep(3)
 driver.find_element(By.XPATH, "//button[@class='Button_button__3Me73 Button_button_variant_secondary__RwIii']").click()
 time.sleep(3)
-driver.execute_script("window.scrollTo(0,3150)","") # Scroll page
+# driver.execute_script("window.scrollTo(0,3150)","") # Scroll page
 
 # try:
 #     element = WebDriverWait(driver, 10).until(
@@ -30,19 +30,25 @@ driver.execute_script("window.scrollTo(0,3150)","") # Scroll page
 #     time.sleep(3)
 #     driver.quit()
 
-try:
-    e = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.CLASS_NAME, "visuallyHidden"))
-    )
-except ElementClickInterceptedException:
-    print('Did not work')
+next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_pagination__arrow_side_right__9YUGr']"
+def next_page(driver, button_xpath):
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, button_xpath ))
+        )
+    except TimeoutException:
+        driver.quit()
+        return False
 
-finally:
-    element = driver.find_element(By.CLASS_NAME, 'visuallyHidden')
-    print(element)
-    # time.sleep(5)
-    # driver.execute_script("arguments[0].click();", element)
-    # time.sleep(5)
-    driver.quit()
+    finally:
+        driver.find_element(By.XPATH, next_button).click()
+        time.sleep(2)
+        return True
 
-#### Triing to click on page indexer thing at bottom of the first page ####
+iters = 0
+
+while next_page(driver, next_button):
+    print(driver.page_source)
+    iters += 1
+    
+print(iters)

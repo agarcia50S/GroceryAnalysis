@@ -4,7 +4,7 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 
-print(factorial(6))
+print(factorial(8)//(factorial(4) * (factorial(2)**4)))
 
 def k_groups(n, sub_seqs):
     numerator = factorial(n)
@@ -17,4 +17,4 @@ def k_groups(n, sub_seqs):
 numer, denom = k_groups(6, [2, 2, 2]), k_groups(3, [1])
 
 print(numer, '/', denom, '=', numer / denom)
-print(k_groups(6, [2, 2, 2]))
+print(k_groups(8, [2, 2, 2]))
