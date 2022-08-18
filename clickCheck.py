@@ -1,3 +1,4 @@
+from os import cpu_count
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -32,23 +33,37 @@ time.sleep(3)
 
 next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_pagination__arrow_side_right__9YUGr']"
 def next_page(driver, button_xpath):
+
     try:
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, button_xpath ))
         )
     except TimeoutException:
-        driver.quit()
+        print('Last Page Reached')
+        # driver.quit()
         return False
 
     finally:
         driver.find_element(By.XPATH, next_button).click()
         time.sleep(2)
+        
         return True
 
-iters = 0
+def get_page_count(driver, count_xpath):
+    '''
+    driver --> chrome webdriver instance
+    count_xpath --> xpath for html tag that has page count text
+    '''
+    element = driver.find_element(By.XPATH, count_xpath)
+    total_pages = int(element.text[-3:][:3])
+    return total_pages
+page_max = get_page_count(driver, "//ul[@class='Pagination_pagination__list__1JUIg']")
 
+i = 0
 while next_page(driver, next_button):
-    print(driver.page_source)
-    iters += 1
-    
-print(iters)
+    print(driver.page_source) 
+    i += 1
+    if i == page_max - 1:
+        driver.quit()
+        break
+    print(i)
