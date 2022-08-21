@@ -8,21 +8,14 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 
 def next_page(driver, button_xpath):
-    try:
-        WebDriverWait(driver, 5).until(
-            EC.element_to_be_clickable((By.XPATH, button_xpath ))
-            )
-        WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, button_xpath ))
-            )            
-    except (TimeoutException, NoSuchElementException):
-        # print('Last Page Reached')
-        driver.quit()
-        return False
-    finally:
-        driver.find_element(By.XPATH, button_xpath).click()
-        time.sleep(3.5)
-        return True
+    WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.XPATH, button_xpath ))
+        )
+    # WebDriverWait(driver, 5).until(
+    #     EC.presence_of_element_located((By.XPATH, button_xpath ))
+    #     )            
+    driver.find_element(By.XPATH, button_xpath).click()
+    time.sleep(3.5)
 
 def get_page_count(driver, count_xpath):
     '''
@@ -37,9 +30,13 @@ def all_pages_html(wd, total_pages, next_button_xpath):
     html = []
     for _ in range(total_pages):
         html.append(wd.page_source)
-        next_page(wd, next_button_xpath) # clicks next button; returns False if button not clickable
-        # # if end_page == False:
-        # #     return html
+        # if end_page == False:
+        #     return html
+        try:
+            next_page(wd, next_button_xpath) # clicks next button; returns False if button not clickable
+        except (TimeoutException, NoSuchElementException):
+            driver.quit()
+            return html
     driver.quit()
     return html
 
@@ -61,7 +58,7 @@ page_max = get_page_count(driver, "//ul[@class='Pagination_pagination__list__1JU
 # xpath to button tag that makes the next-page button
 next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_pagination__arrow_side_right__9YUGr']"
 
-pages_html = all_pages_html(driver, 11, next_button)
+pages_html = all_pages_html(driver, page_max, next_button)
 print(pages_html)
 print('Total pages:', page_max)
 print('Scraped pages:', len(pages_html))
