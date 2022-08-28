@@ -35,35 +35,33 @@ def all_pages_html(wd, total_pages, next_button_xpath):
         try:
             next_page(wd, next_button_xpath) # clicks next button; returns False if button not clickable
         except (TimeoutException, NoSuchElementException):
-            driver.quit()
+            wd.quit()
             return html
-    driver.quit()
+    wd.quit()
     return html
 
-# goes to website        
-url = 'https://www.traderjoes.com/home/products/category/food-8'
-driver = webdriver.Chrome()
-driver.get(url)
-time.sleep(3)
-driver.refresh()
-time.sleep(3)
+if __name__ == '__main__':
 
-# bypasses an "accept cookies" pop-up
-driver.find_element(By.XPATH, "//button[@class='Button_button__3Me73 Button_button_variant_secondary__RwIii']").click()
-time.sleep(3)
+    # goes to website        
+    url = 'https://www.traderjoes.com/home/products/category/food-8'
+    driver = webdriver.Chrome()
+    driver.get(url)
+    time.sleep(3)
+    driver.refresh()
+    time.sleep(3)
 
-# gets num of max pages on site
-page_max = get_page_count(driver, "//ul[@class='Pagination_pagination__list__1JUIg']")
+    # bypasses an "accept cookies" pop-up
+    driver.find_element(By.XPATH, "//button[@class='Button_button__3Me73 Button_button_variant_secondary__RwIii']").click()
+    time.sleep(3)
 
-# xpath to button tag that makes the next-page button
-next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_pagination__arrow_side_right__9YUGr']"
+    # gets num of max pages on site
+    page_max = get_page_count(driver, "//ul[@class='Pagination_pagination__list__1JUIg']")
 
-pages_html = all_pages_html(driver, page_max, next_button)
-print(pages_html)
-print('Total pages:', page_max)
-print('Scraped pages:', len(pages_html))
+    # xpath to button tag that makes the next-page button
+    next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_pagination__arrow_side_right__9YUGr']"
 
-# ISSSUE: there seems to be issue with get_page_count() as it returning 56 rather than 35
-## FINDING: issue caused by initial page loading with additional products (i.e. ~800)
+    pages_html = all_pages_html(driver, page_max, next_button)
+    print(pages_html)
+    print('Total pages:', page_max)
+    print('Scraped pages:', len(pages_html))
 
-# ISSSUE: I need to determine what an appropiate condition to break loop on; this is for all_pages_html()
