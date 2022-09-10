@@ -32,13 +32,16 @@ next_button = "//button[@class='Pagination_pagination__arrow__3TJf0 Pagination_p
 
 pages = nav.all_pages_html(driver, 3, next_button) # list of each page's html
 
+# htmltag that has product name
 product_tag = 'h2'
 product_class = 'ProductCard_card__title__text__uiWLe'
+
+# html tag that has product price per quauntity
 price_quant_tag = 'div'
 price_quant_class = 'ProductPrice_productPrice__1Rq1r ProductCard_card__productPrice__1W4Le'
 
+# making list of tags that contain product name and product price per quantity
 prod_html = handle.find_tag(pages, product_tag, product_class)
-prod_dict = handle.make_contaniner(Product=handle.get_tag_text(prod_html))
 price_quant_html = handle.find_tag(pages, price_quant_tag, price_quant_class)
 
 # getting text in html tags

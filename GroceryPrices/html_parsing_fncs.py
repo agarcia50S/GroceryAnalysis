@@ -60,7 +60,7 @@ if __name__ == '__main__':
     f = open("GroceryPrices/html_for_testing.txt", "r")
     html = f.read()
     prod_html = find_tag([html], product_tag, product_class)
-    prod_dict = make_contaniner(Product=get_tag_text(prod_html))
+    
     price_quant_html = find_tag([html], price_quant_tag, price_quant_class)
 
     # getting text in html tags

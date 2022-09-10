@@ -42,6 +42,8 @@ def all_pages_html(wd, total_pages, next_button_xpath):
 
 if __name__ == '__main__':
 
+# ----------------------- Testing Functions -------------------------
+
     # goes to website        
     url = 'https://www.traderjoes.com/home/products/category/food-8'
     driver = webdriver.Chrome()
