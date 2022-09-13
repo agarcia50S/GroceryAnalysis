@@ -9,9 +9,11 @@ def find_tag(html_list, tag, tag_class):
     lists are merged into list. 
     Returns the combined list.
 
-    html_list --> list of html of individual pages
+    html_list --> list of html of individual 
+                  pages
     tag --> html tag
-    tag_class --> particular class attribute of tag
+    tag_class --> particular class attribute of 
+                  tag
 
     '''
     values = []
