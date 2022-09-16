@@ -28,8 +28,17 @@ def get_page_count(driver, xpath):
         page_num = int(element.text[-2:])
         return page_num
 
-def find_products(category, url, driver):
+def find_products(driver, categories, url):
     driver.get(url) # navigates to url; returns none
+    url_parts = url.split('=')
+    for i in categories:
+        page_indx = 0
+        term = i
+        # constructing url for given item and page index
+        url = url_parts[0] + term + '&' + url_parts[1] + '&' + url_parts[2] + '&' + url_parts[3] + page_indx + '&' + page_indx[4]
+
+
+
     
 
 for i in grocery_list:
