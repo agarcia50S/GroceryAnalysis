@@ -26,16 +26,22 @@ class TargetScrapper():
             return page_num
 
     def find_products(self):
-        for term in self.categories:
+        for item in self.categories:
             url_parts = self.url.split('&')
             page_indx = 0
+
+            # getting parts of url-- 'SearchTerm=' and 'nao=' 
+            term_indx, num_indx = url_parts[0].find('='), url_parts[3].find('=') # assign indx of char '='
+            url_part_0, url_part_3 = url_parts[0][:term_indx + 1], url_parts[3][:num_indx + 1] # assign url parts
+
             # constructing url for given item and page index
-            url = f'{url_parts[0]}{term}&{url_parts[1]}&{url_parts[2]}&{url_parts[3]}{page_indx}&{page_indx[4]}'
+            url = f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
+
             self.driver.get(url) # navigates to url; returns none
             last_pg_num = self.get_page_count() - 1 # remove current pg from total
 
             for _ in range(last_pg_num):
-                url = f'{url_parts[0]}{term}&{url_parts[1]}&{url_parts[2]}&{url_parts[3]}{page_indx}&{page_indx[4]}'
+                url = f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
                 wd.get(url) # navigates to url; returns none
                 sleep(4.5)
                 print(wd.page_source)
