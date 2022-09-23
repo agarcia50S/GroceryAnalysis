@@ -26,6 +26,7 @@ class TargetScrapper():
             return page_num
 
     def find_products(self):
+        result = []
         for item in self.categories:
             url_parts = self.url.split('&')
             page_indx = 0
@@ -42,15 +43,16 @@ class TargetScrapper():
 
             for _ in range(last_pg_num):
                 url = f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
-                wd.get(url) # navigates to url; returns none
+                self.driver.get(url) # navigates to url; returns none
                 sleep(4.5)
-                print(wd.page_source)
+                result.append(self.driver.page_source)
                 page_indx += 24
 
                 # FOR TESTING
-                if page_indx >= 96: 
+                if page_indx >= 24: 
                     break
         self.driver.quit()
+        return result
 
     @staticmethod
     def make_xpath(tag, attr, val):
@@ -83,4 +85,5 @@ if __name__ == '__main__':
     pg_num_xpath = TargetScrapper.make_xpath(tag, attr, val)
     url = 'https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid'
     bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
-    bot.find_products()
+    pages = bot.find_products()
+    print(pages)
