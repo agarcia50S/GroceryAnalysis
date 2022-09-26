@@ -14,7 +14,7 @@ class TargetScrapper():
         self.last_pg_xpath = last_pg_xpath
         self.categories = categories
 
-    def make_url(self, item, page_indx):
+    def make_url(self, item, page_indx=0):
         # split url str on '&'
         url_parts = self.url.split('&')
 
@@ -51,13 +51,16 @@ class TargetScrapper():
     def find_products(self):
         result = []
         for item in self.categories:
-            page_indx = 0
-            url = self.make_url(item, page_indx)
-
+            url = self.make_url(item) # build url with given item and default page num, 0
             self.driver.get(url) # navigates to url; returns none
-            last_pg_num = self.get_page_count() - 1 # remove current pg from total
+            sleep(4.5)
+            self.scroll_to_end()
+            result.append(self.driver.page_source)
+            last_pg_num = self.get_page_count() - 1 # finds max val in pagination
+            page_indx = 24
+            end_pg = last_pg_num * page_indx
 
-            for _ in range(last_pg_num):
+            while page_indx <= end_pg:
                 url = self.make_url(item, page_indx)
                 self.driver.get(url) # navigates to url; returns none
                 sleep(4.5)
@@ -66,7 +69,7 @@ class TargetScrapper():
                 page_indx += 24
 
                 # FOR TESTING
-                if page_indx >= 24: 
+                if page_indx >= 96: 
                     break
         self.driver.quit()
         return result
