@@ -48,7 +48,7 @@ class TargetScrapper():
             page_num = int(element.text[-2:])
             return page_num
     
-    def load_page(self, item, wait=4.5, page_indx=2):
+    def load_page(self, item, wait=4.5, page_indx=0):
         '''
         Constructs page's url and then searches for url. Once on page
         we wait for x seconds and then scroll to bottom, 
