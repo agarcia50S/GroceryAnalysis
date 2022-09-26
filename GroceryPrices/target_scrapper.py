@@ -47,6 +47,17 @@ class TargetScrapper():
         else:
             page_num = int(element.text[-2:])
             return page_num
+    
+    def load_page(self, wait, item, page_indx=2):
+        '''
+        Constructs page's url and then searches for url. Once on page
+        we wait for x seconds and then scroll to bottom, 
+        as page has scroll-dependent elements.
+        '''
+        url = self.make_url(item) # build url with given item and default page num, 0
+        self.driver.get(url) # navigates to url; returns none
+        sleep(wait)
+        self.scroll_to_end()
 
     def get_all_html(self):
         result = []
