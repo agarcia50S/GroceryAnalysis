@@ -25,7 +25,7 @@ class TargetScrapper():
         # reconstructing url with given item and page index
         return f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
 
-    def scroll_to_bottom(self, wait=2):
+    def scroll_to_end(self, wait=2):
         screen_height = self.driver.execute_script("return window.screen.height;") # get page screen height
         scroll_height = self.driver.execute_script("return document.body.scrollHeight;") # get curr scroll height
         i = 1
