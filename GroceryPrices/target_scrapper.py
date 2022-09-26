@@ -48,7 +48,7 @@ class TargetScrapper():
             page_num = int(element.text[-2:])
             return page_num
 
-    def find_products(self):
+    def get_all_html(self):
         result = []
         for item in self.categories:
             url = self.make_url(item) # build url with given item and default page num, 0
@@ -105,5 +105,5 @@ if __name__ == '__main__':
     pg_num_xpath = TargetScrapper.make_xpath(tag, attr, val)
     url = 'https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid'
     bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
-    pages = bot.find_products()
+    pages = bot.get_all_html()
     print(pages)
