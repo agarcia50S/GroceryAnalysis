@@ -14,6 +14,17 @@ class TargetScrapper():
         self.last_pg_xpath = last_pg_xpath
         self.categories = categories
 
+    def make_url(self, item, page_indx):
+        # split url str on '&'
+        url_parts = self.url.split('&')
+
+        # getting parts of url-- 'SearchTerm=' and 'nao=' 
+        term_indx, num_indx = url_parts[0].find('='), url_parts[3].find('=') # assign indx of char '='
+        url_part_0, url_part_3 = url_parts[0][:term_indx + 1], url_parts[3][:num_indx + 1] # assign url parts
+
+        # reconstructing url with given item and page index
+        return f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
+
     def get_page_count(self):
         try:
             element = WebDriverWait(self.driver, 10).until(
@@ -28,21 +39,14 @@ class TargetScrapper():
     def find_products(self):
         result = []
         for item in self.categories:
-            url_parts = self.url.split('&')
             page_indx = 0
-
-            # getting parts of url-- 'SearchTerm=' and 'nao=' 
-            term_indx, num_indx = url_parts[0].find('='), url_parts[3].find('=') # assign indx of char '='
-            url_part_0, url_part_3 = url_parts[0][:term_indx + 1], url_parts[3][:num_indx + 1] # assign url parts
-
-            # constructing url for given item and page index
-            url = f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
+            url = self.make_url(item, page_indx)
 
             self.driver.get(url) # navigates to url; returns none
             last_pg_num = self.get_page_count() - 1 # remove current pg from total
 
             for _ in range(last_pg_num):
-                url = f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
+                url = self.make_url(item, page_indx)
                 self.driver.get(url) # navigates to url; returns none
                 sleep(4.5)
                 result.append(self.driver.page_source)
