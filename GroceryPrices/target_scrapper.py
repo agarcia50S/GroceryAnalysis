@@ -61,6 +61,7 @@ class TargetScrapper():
                 url = self.make_url(item, page_indx)
                 self.driver.get(url) # navigates to url; returns none
                 sleep(4.5)
+                self.scroll_to_end()
                 result.append(self.driver.page_source)
                 page_indx += 24
 
