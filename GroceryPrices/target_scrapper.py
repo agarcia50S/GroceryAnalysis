@@ -25,6 +25,18 @@ class TargetScrapper():
         # reconstructing url with given item and page index
         return f'{url_part_0}{item}&{url_parts[1]}&{url_parts[2]}&{url_part_3}{page_indx}&{url_parts[4]}'
 
+    def scroll_to_bottom(self, wait=2):
+        screen_height = self.driver.execute_script("return window.screen.height;") # get page screen height
+        scroll_height = self.driver.execute_script("return document.body.scrollHeight;") # get curr scroll height
+        i = 1
+        while screen_height * i < scroll_height:
+            # scroll one screen height each time
+            self.driver.execute_script(f"window.scrollTo(0, {screen_height}*{i});")  
+            i += 1
+            sleep(wait)
+            # update scroll height, as the scroll height can change after we scrolled the page
+            scroll_height = self.driver.execute_script("return document.body.scrollHeight;")  
+                
     def get_page_count(self):
         try:
             element = WebDriverWait(self.driver, 10).until(
