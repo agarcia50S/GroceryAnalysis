@@ -62,20 +62,14 @@ class TargetScrapper():
     def get_all_html(self):
         result = []
         for item in self.categories:
-            url = self.make_url(item) # build url with given item and default page num, 0
-            self.driver.get(url) # navigates to url; returns none
-            sleep(4.5)
-            self.scroll_to_end()
+            self.load_page(item)
             result.append(self.driver.page_source)
             last_pg_num = self.get_page_count() - 1 # finds max val in pagination
             page_indx = 24
             end_pg = last_pg_num * page_indx
 
             while page_indx <= end_pg:
-                url = self.make_url(item, page_indx)
-                self.driver.get(url) # navigates to url; returns none
-                sleep(4.5)
-                self.scroll_to_end()
+                self.load_page(item, cur_page=page_indx)
                 result.append(self.driver.page_source)
                 page_indx += 24
 
