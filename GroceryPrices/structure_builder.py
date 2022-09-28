@@ -25,6 +25,22 @@ class Parser():
     def extract_text(self, tag, tag_class):
         elements = self.find_all_elements(tag, tag_class)
         return [i.text for i in elements]
+
+    # fnc that can get prod and quant info; return 2d array
+    def find_prod_quant(self):
+
+        # need to account for names like 
+        # USDA Choice Angus Petite Sirloin Steak - 0.68-1.13 lbs - price per lb - Good & Gather™
+
+        texts = self.extract_text(self.prod_qnt_tag, self.prod_quant_class)
+        if '$' in texts[0]:
+            raise AttributeError('Incorrect Atttibute Assignment')
+        else:
+           return [i.split(' - ')[:2] for i in texts]
+             
+
+    # fnc that can get price info; return 1d array
+    # fnc that can add return populated dict 
          
     @staticmethod
     def split_text(text, delim):
