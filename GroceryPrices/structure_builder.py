@@ -31,12 +31,21 @@ class Parser():
 
         # need to account for names like 
         # USDA Choice Angus Petite Sirloin Steak - 0.68-1.13 lbs - price per lb - Good & Gather™
-
+        l = []
         texts = self.extract_text(self.prod_qnt_tag, self.prod_quant_class)
         if '$' in texts[0]:
             raise AttributeError('Incorrect Atttibute Assignment')
         else:
-           return [i.split(' - ')[:2] for i in texts]
+            for i in texts:
+                split_name = i.split(' - ')
+                if len(split_name[1]) <= 6: # ** make sure there is always a 3rd item **
+                    split_name.pop(2)
+                else:
+                    split_name.pop(1)
+
+                l.append(split_name)
+            
+        return l
              
 
     # fnc that can get price info; return 1d array
