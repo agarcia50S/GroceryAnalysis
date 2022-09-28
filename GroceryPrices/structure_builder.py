@@ -2,10 +2,18 @@ from bs4 import BeautifulSoup
 from target_scrapper import TargetScrapper
 from selenium import webdriver
 class Parser():
-    def __init__(self, pages):
+    def __init__(self, pages, 
+                 prod_qnt_tag='', prod_quant_class='',
+                 price_tag='', price_class=''):
         self.pages = pages
-        # self.tag = tag
-        # self.tag_class = tag_class
+        self.prod_qnt_tag = prod_qnt_tag
+        self.prod_quant_class = prod_quant_class
+        self.price_tag = price_tag
+        self.price_class = price_class
+        self.container = {'Product':[], 
+                          'Price':[],
+                          'Quantity':[]
+        }
 
     def find_all_elements(self, tag, tag_class):
         for page in self.pages:
@@ -37,7 +45,7 @@ if __name__ == '__main__':
     url = 'https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid'
 
     bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
-    pages = bot.find_products()
+    pages = bot.get_all_html()
 
     
     p = Parser(pages)
@@ -46,9 +54,3 @@ if __name__ == '__main__':
     prod_tag = 'a'
     prod = p.extract_text(prod_tag, prod_class)
 
-    print(prod[0])
-
-    # template = {'Product':[], 
-    #             'Price':[],
-    #             'Quantity':[]
-    # }
