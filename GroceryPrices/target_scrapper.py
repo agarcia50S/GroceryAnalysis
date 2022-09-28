@@ -74,7 +74,7 @@ class TargetScrapper():
                 page_indx += 24
 
                 # FOR TESTING
-                if page_indx >= 96: 
+                if page_indx > 24: 
                     break
         self.driver.quit()
         return result
