@@ -38,10 +38,11 @@ class Parser():
         else:
             for i in texts:
                 split_name = i.split(' - ')
-                if len(split_name[1]) <= 6: # ** make sure there is always a 3rd item **
-                    split_name.pop(2)
-                else:
-                    split_name.pop(1)
+                if len(split_name) > 2:
+                    if len(split_name[1]) <= 6: # ** make sure there is always a 3rd item **
+                        split_name.pop(2)
+                    else:
+                        split_name.pop(1)
 
                 l.append(split_name)
             
