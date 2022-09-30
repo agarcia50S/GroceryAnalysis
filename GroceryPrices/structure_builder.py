@@ -31,7 +31,8 @@ class Parser():
 
         # need to account for names like 
         # USDA Choice Angus Petite Sirloin Steak - 0.68-1.13 lbs - price per lb - Good & Gather™
-        l = []
+        p = []
+        q = []
         texts = self.extract_text(self.prod_qnt_tag, self.prod_quant_class)
         if '$' in texts[0]:
             raise AttributeError('Incorrect Atttibute Assignment')
@@ -43,8 +44,9 @@ class Parser():
                         split_name.pop(2)
                     else:
                         split_name.pop(1)
-                l.append(split_name)        
-        return l
+                p.append(split_name[0])
+                q.append(split_name[1])
+        return p, q
              
 
     # fnc that can get price info; return 1d array
@@ -53,7 +55,6 @@ class Parser():
         return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
         
     # fnc that can add return populated dict
-         
     @staticmethod
     def split_text(text, delim):
         split_loc = text.find(delim)
@@ -74,7 +75,6 @@ if __name__ == '__main__':
 
     bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
     pages = bot.get_all_html()
-
     
     p = Parser(pages)
 
