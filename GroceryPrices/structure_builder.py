@@ -55,6 +55,11 @@ class Parser():
         return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
         
     # fnc that can add return populated dict
+    def make_dict(self):
+        self.container['Products'] = self.find_prod_quant()[0]
+        self.container['Quant'] = self.find_prod_quant()[1]
+        self.container['Price'] = self.find_prices()
+         
     @staticmethod
     def split_text(text, delim):
         split_loc = text.find(delim)
