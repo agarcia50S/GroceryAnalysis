@@ -3,11 +3,11 @@ from target_scrapper import TargetScrapper
 from selenium import webdriver
 class Parser():
     def __init__(self, pages, 
-                 prod_qnt_tag='', prod_quant_class='',
+                 prod_qnt_tag='', prod_qnt_class='',
                  price_tag='', price_class=''):
         self.pages = pages
         self.prod_qnt_tag = prod_qnt_tag
-        self.prod_quant_class = prod_quant_class
+        self.prod_qnt_class = prod_qnt_class
         self.price_tag = price_tag
         self.price_class = price_class
         self.container = {'Product':[], 
@@ -33,7 +33,7 @@ class Parser():
         # USDA Choice Angus Petite Sirloin Steak - 0.68-1.13 lbs - price per lb - Good & Gather™
         p = []
         q = []
-        texts = self.extract_text(self.prod_qnt_tag, self.prod_quant_class)
+        texts = self.extract_text(self.prod_qnt_tag, self.prod_qnt_class)
         if '$' in texts[0]:
             raise AttributeError('Incorrect Atttibute Assignment')
         else:
@@ -48,7 +48,6 @@ class Parser():
                 q.append(split_name[1])
         return p, q
              
-
     # fnc that can get price info; return 1d array
     def find_prices(self):
         texts = self.extract_text(self.price_tag, self.price_class)
@@ -81,9 +80,13 @@ if __name__ == '__main__':
     bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
     pages = bot.get_all_html()
     
-    p = Parser(pages)
 
     prod_class = 'Link__StyledLink-sc-frmop1-0 styles__StyledTitleLink-sc-h3r0um-1 iMNANe dcAXAu h-display-block h-text-bold h-text-bs'
     prod_tag = 'a'
+
+    price_class = ''
+
+    p = Parser(pages)
+
     prod = p.extract_text(prod_tag, prod_class)
 
