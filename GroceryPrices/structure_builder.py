@@ -43,14 +43,16 @@ class Parser():
                         split_name.pop(2)
                     else:
                         split_name.pop(1)
-
-                l.append(split_name)
-            
+                l.append(split_name)        
         return l
              
 
     # fnc that can get price info; return 1d array
-    # fnc that can add return populated dict 
+    def find_prices(self):
+        texts = self.extract_text(self.price_tag, self.price_class)
+        return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
+        
+    # fnc that can add return populated dict
          
     @staticmethod
     def split_text(text, delim):
