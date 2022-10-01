@@ -76,30 +76,3 @@ class Parser():
     def split_text(text, delim):
         split_loc = text.find(delim)
         return (text[:split_loc], text[split_loc:])
-
-if __name__ == '__main__':
-    grocery_list = ['meat', 'produce']
-
-    wd = webdriver.Chrome()
-
-    # pagination html info
-    tag = 'span'
-    attr = 'class'
-    val = 'Pagination__StyledSpan-sc-sq3l8r-5 gyBTAO'
-
-    pg_num_xpath = TargetScrapper.make_xpath(tag, attr, val)
-    url = 'https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid'
-
-    bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
-    pages = bot.get_all_html()
-    
-
-    prod_class = 'Link__StyledLink-sc-frmop1-0 styles__StyledTitleLink-sc-h3r0um-1 iMNANe dcAXAu h-display-block h-text-bold h-text-bs'
-    prod_tag = 'a'
-
-    price_class = ''
-
-    p = Parser(pages)
-
-    prod = p.extract_text(prod_tag, prod_class)
-

@@ -1,11 +1,9 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 from time import sleep
-from bs4 import BeautifulSoup
 
 class TargetScrapper():
     def __init__(self, driver, url, last_pg_xpath, categories):
@@ -86,29 +84,3 @@ class TargetScrapper():
         form is //tagname[@attribute='value']
         '''
         return f"//{tag}[@{attr}='{val}']"
-
-# soup = BeautifulSoup(response, 'html.parser')
-# print(soup)
-
-if __name__ == '__main__':
-    
-    # https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid
-
-    # grocery_list = ['meat', 'produce', 'dairy', 'frozen foods', 'bread AND bakery', 
-    #                 'beverages', 'baking goods', 'pantry food',  'seafood', 'snacks', 
-    #                 'pastry', 'deli', 'coffee']
-
-    grocery_list = ['meat', 'produce']
-
-    wd = webdriver.Chrome()
-
-    # pagination html info
-    tag = 'span'
-    attr = 'class'
-    val = 'Pagination__StyledSpan-sc-sq3l8r-5 gyBTAO'
-
-    pg_num_xpath = TargetScrapper.make_xpath(tag, attr, val)
-    url = 'https://www.target.com/s?searchTerm=meat&sortBy=relevance&category=5xt1a&Nao=0&moveTo=product-list-grid'
-    bot = TargetScrapper(wd, url, pg_num_xpath, grocery_list)
-    pages = bot.get_all_html()
-    print(pages)
