@@ -15,11 +15,11 @@ class Parser():
                           'Quantity':[]
         }
 
-    def find_all_elements(self, tag, tag_class):
+    def find_all_elements(self, tag, attr, val):
         for page in self.pages:
             elements = []
             soup = BeautifulSoup(page, 'html.parser') 
-            elements += soup.find_all(tag, class_=tag_class)
+            elements += soup.find_all(tag, attrs={attr,  val})
         return elements
 
     def extract_text(self, tag, tag_class):
@@ -47,7 +47,8 @@ class Parser():
                 p.append(split_name[0])
                 q.append(split_name[1])
         return p, q
-             
+          
+
     # fnc that can get price info; return 1d array
     def find_prices(self):
         texts = self.extract_text(self.price_tag, self.price_class)
