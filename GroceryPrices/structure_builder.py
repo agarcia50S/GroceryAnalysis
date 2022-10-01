@@ -62,7 +62,6 @@ class Parser():
     def find_prices(self):
         texts = self.extract_text(self.price_tag, 
                                   self.price_attr, 
-                                  self.price_attr, 
                                   self.price_val)
         return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
         
