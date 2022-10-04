@@ -18,10 +18,6 @@ class Parser():
         self.price_tag = price_tag
         self.price_attr = price_attr
         self.price_val = price_val
-        self.container = {'Product':[], 
-                          'Price':[],
-                          'Quantity':[]
-        }
 
     def find_all_elements(self, tag, attr, val):
         elements = []
@@ -67,9 +63,10 @@ class Parser():
         
     # fnc that can add return populated dict
     def make_dict(self):
-        self.container['Products'] = self.find_prod_quant()[0]
-        self.container['Quant'] = self.find_prod_quant()[1]
-        self.container['Price'] = self.find_prices()
+        return {'Product':self.find_prod_quant()[0], 
+                'Price':self.find_prod_quant()[1],
+                'Quantity':self.find_prices()
+        }
          
     @staticmethod
     def split_text(text, delim):
