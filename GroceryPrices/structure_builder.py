@@ -64,8 +64,8 @@ class Parser():
     # fnc that can add return populated dict
     def make_dict(self):
         return {'Product':self.find_prod_quant()[0], 
-                'Price':self.find_prod_quant()[1],
-                'Quantity':self.find_prices()
+                'Quantity':self.find_prod_quant()[1],
+                'Price':self.find_prices()
         }
          
     @staticmethod
