@@ -24,10 +24,10 @@ class Parser():
         }
 
     def find_all_elements(self, tag, attr, val):
+        elements = []
         for page in self.pages:
-            elements = []
             soup = BeautifulSoup(page, 'html.parser') 
-            elements += soup.find_all(tag, attrs={attr,  val})
+            elements += soup.find_all(tag, attrs={attr:val})
         return elements
 
     def extract_text(self, tag, attr, val):
@@ -42,8 +42,8 @@ class Parser():
         p = []
         q = []
         texts = self.extract_text(self.prod_qnt_tag, 
-                                  self.prod_qnt_attr, 
-                                  self.prod_qnt_val)
+                                    self.prod_qnt_attr, 
+                                    self.prod_qnt_val)
         if '$' in texts[0]:
             raise AttributeError('Incorrect Atttibute Assignment')
         else:
@@ -61,8 +61,8 @@ class Parser():
     # fnc that can get price info; return 1d array
     def find_prices(self):
         texts = self.extract_text(self.price_tag, 
-                                  self.price_attr, 
-                                  self.price_val)
+                                       self.price_attr, 
+                                       self.price_val)
         return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
         
     # fnc that can add return populated dict
