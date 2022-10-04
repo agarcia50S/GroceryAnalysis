@@ -59,7 +59,7 @@ class Parser():
         texts = self.extract_text(self.price_tag, 
                                        self.price_attr, 
                                        self.price_val)
-        return [i.split('/')[0].strip('(') if '/' in i else i for i in texts]
+        return [i.split('(')[1].split('/')[0] if '/' in i else i for i in texts]
         
     # fnc that can add return populated dict
     def make_dict(self):
