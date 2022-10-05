@@ -1,3 +1,4 @@
+from ast import Slice
 from bs4 import BeautifulSoup
 from target_scrapper import TargetScrapper
 from selenium import webdriver
@@ -44,14 +45,16 @@ class Parser():
             raise AttributeError('Incorrect Atttibute Assignment')
         else:
             for i in texts:
-                split_name = i.split(' - ')
-                if len(split_name) > 2:
-                    if len(split_name[1]) <= 6: # ** make sure there is always a 3rd item **
-                        split_name.pop(2)
-                    else:
-                        split_name.pop(1)
-                p.append(split_name[0])
-                q.append(split_name[1])
+                split_txt = i.split(' - ')
+                if len(split_txt) > 2:
+                    p.append(split_txt.pop(0))
+                    for j in split_txt:
+                        if '-' not in j and '&' not in j:
+                            if j[0].isnumeric():
+                                q.append(j)
+                else:
+                    p.append(split_txt[0])
+                    q.append(split_txt[1])
         return p, q
           
     # fnc that can get price info; return 1d array
