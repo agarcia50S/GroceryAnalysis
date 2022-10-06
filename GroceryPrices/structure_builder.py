@@ -49,7 +49,7 @@ class Parser():
                 if len(split_txt) > 2:
                     p.append(split_txt.pop(0))
                     for j in split_txt:
-                        if '-' not in j and '&' not in j:
+                        if j not in ['-', '&']:
                             if j[0].isnumeric():
                                 q.append(j)
                 else:
