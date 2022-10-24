@@ -33,7 +33,6 @@ class Parser():
 
     # fnc that can get prod and quant info; return 2d array
     def find_prod_quant(self):
-
         # need to account for names like 
         # USDA Choice Angus Petite Sirloin Steak - 0.68-1.13 lbs - price per lb - Good & Gather™
         p = []
@@ -45,7 +44,7 @@ class Parser():
             raise AttributeError('Incorrect Atttibute Assignment')
         else:
             for i in texts:
-                split_txt = i.split(' - ')
+                split_txt = i.split('-')
                 if len(split_txt) > 2:
                     p.append(split_txt.pop(0))
                     for j in split_txt:
@@ -53,8 +52,13 @@ class Parser():
                             if j[0].isnumeric():
                                 q.append(j)
                 else:
-                    p.append(split_txt[0])
-                    q.append(split_txt[1])
+                    try:
+                        p.append(split_txt[0])
+                        q.append(split_txt[1])
+                    except IndexError as er:
+                        print(er)
+                        print(split_txt)
+                        break
         return p, q
           
     # fnc that can get price info; return 1d array
@@ -62,8 +66,25 @@ class Parser():
         texts = self.extract_text(self.price_tag, 
                                        self.price_attr, 
                                        self.price_val)
-        return [i.split('(')[1].split('/')[0] if '/' in i else i for i in texts]
+        r = []
         
+        # return [i.split('(')[1].split('/')[0] if '/' in i else i for i in texts]
+        for i in texts:
+            if '/' in i:
+                if '(' in i:
+                    try:
+                        r.append(i.split('(')[1].split('/')[0])
+
+                    except Exception as ex:
+                        print(ex)
+                        print('Occured with:', i)
+                        print(texts)
+                        break
+                else:
+                    r.append(i.split('/')[0])
+            else:
+                r.append(i)
+        return r
     # fnc that can add return populated dict
     def make_dict(self):
         return {'Product':self.find_prod_quant()[0], 
