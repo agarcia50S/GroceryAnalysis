@@ -1,7 +1,4 @@
-from ast import Slice
 from bs4 import BeautifulSoup
-from target_scrapper import TargetScrapper
-from selenium import webdriver
 class Parser():
     def __init__(self, 
                  pages, 
