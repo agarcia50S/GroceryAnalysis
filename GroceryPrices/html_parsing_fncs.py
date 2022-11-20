@@ -6,7 +6,7 @@ def find_tag(html_list, tag, tag_class):
     all the html tags with a given class 
     attribute, using .find_all(). The method
     returns a list of tags for each page; the
-    lists are merged into list. 
+    lists are merged into a list. 
     Returns the combined list.
 
     html_list --> list of html of individual 
@@ -23,6 +23,15 @@ def find_tag(html_list, tag, tag_class):
     return values
 
 def get_tag_text(tag_list):
+    '''
+    Iterates over list returned from find_tag (i.e.
+    list of Tag objects with text) in list compreh., 
+    calling the BS4 attr, .text, to get all the
+    text in a given tag.
+    Returns list of strings
+
+    tag_list -- list of BS4 Tag objects
+    '''
     return [tag.text for tag in tag_list]
 
 def make_contaniner(**group_name):
@@ -38,9 +47,9 @@ def split_in_two(str_list, on=' '):
     one list. 
     Returns both lists in a tuple.
 
-    str_list --> list of strings
-    on --> symbol to split str on; default is 
-           a space
+    str_list -- list of strings
+    on -- symbol to split str on; default is 
+          a space
     '''
     one = []
     two = []
