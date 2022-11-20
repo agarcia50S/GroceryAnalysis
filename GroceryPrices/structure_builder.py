@@ -25,7 +25,7 @@ class Parser():
         return elements
 
     def extract_text(self, tag, attr, val):
-        elements = self.find_all_elements(tag, attr,  val)
+        elements = self.find_all_elements(tag, attr, val)
         return [i.text for i in elements]
 
     # fnc that can get prod and quant info; return 2d array
