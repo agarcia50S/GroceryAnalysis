@@ -53,6 +53,8 @@ class Parser():
                     p.append(split_txt[0])
                     q.append(split_txt[1])
                 except IndexError as er:
+                    p.append(i.split('-')[0])
+                    q.append(i.split('-')[1])
                         print(er)
                         print(split_txt)
                         break
