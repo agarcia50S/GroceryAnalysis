@@ -37,10 +37,9 @@ class Parser():
         texts = self.extract_text(self.prod_qnt_tag, 
                                     self.prod_qnt_attr, 
                                     self.prod_qnt_val)
-        if '$' in texts[0]:
-            raise AttributeError('Incorrect Atttibute Assignment')
-        else:
-            for i in texts:
+        self.products = texts
+    
+        for i in texts:
                 split_txt = i.split('-')
                 if len(split_txt) > 2:
                     p.append(split_txt.pop(0))
