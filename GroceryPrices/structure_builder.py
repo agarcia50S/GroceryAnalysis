@@ -45,8 +45,9 @@ class Parser():
                 p.append(split_txt.pop(0))
                 for j in split_txt:
                     if j not in ['-', '&']:
-                            if j[0].isnumeric():
-                                q.append(j)
+                        txt = j.strip()
+                        if txt[0].isnumeric() or 'per' in txt:
+                            q.append(j)
                 else:
                     try:
                         p.append(split_txt[0])
