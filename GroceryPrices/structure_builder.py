@@ -40,11 +40,11 @@ class Parser():
         self.products = texts
     
         for i in texts:
-                split_txt = i.split('-')
-                if len(split_txt) > 2:
-                    p.append(split_txt.pop(0))
-                    for j in split_txt:
-                        if j not in ['-', '&']:
+            split_txt = i.split(' - ')
+            if len(split_txt) > 2:
+                p.append(split_txt.pop(0))
+                for j in split_txt:
+                    if j not in ['-', '&']:
                             if j[0].isnumeric():
                                 q.append(j)
                 else:
