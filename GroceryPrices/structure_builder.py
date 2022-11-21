@@ -55,9 +55,9 @@ class Parser():
                 except IndexError as er:
                     p.append(i.split('-')[0])
                     q.append(i.split('-')[1])
-                        print(er)
-                        print(split_txt)
-                        break
+                    print(er)
+                    print(split_txt)
+                    break
         return p, q
           
     # fnc that can get price info; return 1d array
