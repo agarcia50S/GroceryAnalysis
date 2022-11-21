@@ -48,11 +48,11 @@ class Parser():
                         txt = j.strip()
                         if txt[0].isnumeric() or 'per' in txt:
                             q.append(j)
-                else:
-                    try:
-                        p.append(split_txt[0])
-                        q.append(split_txt[1])
-                    except IndexError as er:
+            else:
+                try:
+                    p.append(split_txt[0])
+                    q.append(split_txt[1])
+                except IndexError as er:
                         print(er)
                         print(split_txt)
                         break
