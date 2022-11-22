@@ -48,16 +48,15 @@ class Parser():
                         txt = j.strip()
                         if txt[0].isnumeric() or 'per' in txt:
                             q.append(j)
+
+            elif split_txt_length == 2:
+                p.append(split_txt[0])
+                q.append(split_txt[1])
             else:
-                try:
-                    p.append(split_txt[0])
-                    q.append(split_txt[1])
-                except IndexError as er:
-                    p.append(i.split('-')[0])
-                    q.append(i.split('-')[1])
-                    print(er)
-                    print(split_txt)
-                    break
+                print(split_txt)
+                prod, quant = split_on_int(title)    
+                p.append(prod)
+                q.append(quant)
         return p, q
           
     # fnc that can get price info; return 1d array
