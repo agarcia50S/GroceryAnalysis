@@ -76,9 +76,7 @@ class Parser():
                         r.append(i.split('(')[1].split('/')[0])
 
                     except Exception as ex:
-                        print(ex)
-                        print('Occured with:', i)
-                        print(texts)
+                        print(f"{ex}\nOccured with: {i}\nLOOP STOPPED ON: {texts}")
                         break
                 else:
                     r.append(i.split('/')[0])
