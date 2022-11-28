@@ -39,9 +39,10 @@ class Parser():
                                     self.prod_qnt_val)
         self.products = texts
     
-        for i in texts:
-            split_txt = i.split(' - ')
-            if len(split_txt) > 2:
+        for title in texts:
+            split_txt = title.split(' - ')
+            split_txt_length = len(split_txt)
+            if split_txt_length > 2:
                 p.append(split_txt.pop(0))
                 for j in split_txt:
                     if j not in ['-', '&']:
