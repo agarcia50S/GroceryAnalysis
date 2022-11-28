@@ -44,12 +44,13 @@ class Parser():
             split_txt_length = len(split_txt)
             if split_txt_length > 2:
                 p.append(split_txt.pop(0))
-                for j in split_txt:
-                    if j not in ['-', '&']:
-                        txt = j.strip()
-                        if txt[0].isnumeric() or 'per' in txt:
-                            q.append(j)
-
+                for txt in split_txt:
+                    strp_txt = txt.strip()
+                    if (is_measure(strp_txt) == True) and '-' not in strp_txt and '&' not in strp_txt:
+                        if 'price per' in strp_txt:
+                            q.append(strp_txt)
+                        elif strp_txt[0].isnumeric():
+                            q.append(strp_txt)      
             elif split_txt_length == 2:
                 p.append(split_txt[0])
                 q.append(split_txt[1])
