@@ -94,3 +94,22 @@ class Parser():
     def split_text(text, delim):
         split_loc = text.find(delim)
         return (text[:split_loc], text[split_loc:])
+    
+    @staticmethod
+    def split_on_int(title):
+        '''
+        Takes char, splits it on first numeric char
+        returns list of the two parts
+        '''
+        for i, char in enumerate(title):
+            if char.isnumeric():
+                if is_measure(title[i:]):
+                # return name and quantity 
+                    return title[:i], title[i:]
+        else: return title, None
+
+    @staticmethod
+    def is_measure(value):
+        for unit in ['lb', 'oz', 'ml', 'g', 'ct']:
+            if unit in value.lower(): return True
+        return False
