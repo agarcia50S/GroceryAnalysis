@@ -46,7 +46,7 @@ class Parser():
                 p.append(split_txt.pop(0))
                 for txt in split_txt:
                     strp_txt = txt.strip()
-                    if (is_measure(strp_txt) == True) and '-' not in strp_txt and '&' not in strp_txt:
+                    if (Parser.is_measure(strp_txt) == True) and '-' not in strp_txt and '&' not in strp_txt:
                         if 'price per' in strp_txt:
                             q.append(strp_txt)
                         elif strp_txt[0].isnumeric():
@@ -56,7 +56,7 @@ class Parser():
                 q.append(split_txt[1])
             else:
                 print(split_txt)
-                prod, quant = split_on_int(title)    
+                prod, quant = Parser.split_on_int(title)    
                 p.append(prod)
                 q.append(quant)
         return p, q
@@ -103,7 +103,7 @@ class Parser():
         '''
         for i, char in enumerate(title):
             if char.isnumeric():
-                if is_measure(title[i:]):
+                if Parser.is_measure(title[i:]):
                 # return name and quantity 
                     return title[:i], title[i:]
         else: return title, None
