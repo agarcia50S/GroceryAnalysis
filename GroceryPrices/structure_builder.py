@@ -109,8 +109,14 @@ class Parser():
         returns list of the two parts
         '''
         for i, char in enumerate(title):
-            if char.isnumeric():
-                if Parser.is_measure(title[i:]):
+            if char.isnumeric() and Parser.is_measure(title[i:]):
+                if i == 0:
+                    left_side = ''
+                    for c in title:
+                        if c == ' ':
+                            return left_side, title[len(left_side):]
+                        left_side += c
+
                 # return name and quantity 
                     return title[:i], title[i:]
         else: return title, None
