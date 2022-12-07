@@ -118,7 +118,7 @@ class Parser():
                         left_side += c
 
                 # return name and quantity 
-                    return title[:i], title[i:]
+                return title[:i], title[i:]
         else: return title, None
 
     @staticmethod
