@@ -123,6 +123,6 @@ class Parser():
 
     @staticmethod
     def is_measure(value):
-        for unit in ['lb', 'oz', 'ml', 'g', 'ct']:
+        for unit in ['lb', 'oz', 'ml', 'g', 'ct', 'pk', 'qt', 'pt']:
             if unit in value.lower(): return True
         return False
