@@ -5,7 +5,7 @@ from selenium.common.exceptions import TimeoutException
 
 from time import sleep
 
-class TargetScrapper():
+class TargetScrapper:
     def __init__(self, driver, url, last_pg_xpath, categories):
         self.driver = driver
         self.url = url
