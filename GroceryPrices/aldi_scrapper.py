@@ -25,8 +25,8 @@ class AldiScrapper:
         soup = BeautifulSoup(page_source, 'html.parser')
         sub_category_elements = soup.find_all('a', attrs= self.sub_category_attr)
 
-        # slice list at middle as page source has duplicate html elements
-        return [self.make_url(i['href']) for i in sub_category_elements][:10]
+        # return list of urls as str types
+        return [self.make_url(i['href']) for i in sub_category_elements]
         
     # make func that goes to a given page
     def get_page_source(self, url):
@@ -83,12 +83,12 @@ if __name__ == '__main__':
     
     base_url = f'https://www.jewelosco.com'
     driver = webdriver.Chrome()
-    t = AldiScrapper(main_categories[:1], {'class':'sbc-link'}, base_url, driver)
+    t = AldiScrapper(main_categories, {'class':'sbc-link'}, base_url, driver)
     url_csv_path = '/Users/agarc/PersonalProjects/test_data/aldi_subcategory_urls.csv'
-    # urls = t.store_first_page_urls(csv_path=url_csv_path)
+    t.store_first_page_urls(csv_path=url_csv_path)
 
     page_source_path = '/Users/agarc/PersonalProjects/test_data/aldi_subcategory_pg_source.html'
-    print(len(t.collect_product_info(url_csv_path)))
+    # print(len(t.collect_product_info(url_csv_path)))
     driver.quit()
 
 # https://www.jewelosco.com/shop/aisles/beverages/soft-drinks.3441.html?sort=&page=1
