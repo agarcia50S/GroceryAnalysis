@@ -10,9 +10,9 @@ import csv
 
 class AldiScrapper:
 
-    def __init__(self, categories, sub_category_attr, base_url, driver):
+    def __init__(self, categories, sub_category_tag, base_url, driver):
         self.categories = categories
-        self.sub_category_attr = sub_category_attr
+        self.sub_category_tag = sub_category_tag
         self.base_url = base_url
         self.driver = driver
 
