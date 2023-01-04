@@ -23,7 +23,7 @@ class AldiScrapper:
     # make fnc collects all sub-category urls
     def collect_sub_category_urls(self, page_source):
         soup = BeautifulSoup(page_source, 'html.parser')
-        sub_category_elements = soup.find_all('a', attrs= self.sub_category_attr)
+        sub_category_elements = soup.select(f'{self.sub_category_tag} > a')
 
         # return list of urls as str types
         return [self.make_url(i['href']) for i in sub_category_elements]
