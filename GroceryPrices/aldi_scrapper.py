@@ -32,7 +32,7 @@ class AldiScrapper:
     def get_page_source(self, url):
         self.driver.get(url)
         self.driver.refresh()
-        sleep(3)
+        sleep(2)
         return driver.page_source
 
     # store all urls
