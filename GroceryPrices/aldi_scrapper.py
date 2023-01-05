@@ -56,7 +56,7 @@ class AldiScrapper:
             return [row.rstrip() for row in in_file]
 
     # collect product info
-    def collect_product_info(self, csv_path):
+    def collect_product_info(self, input_path, output_path):
         product_data = []
         for url in self.extract_urls_from_csv(csv_path):
             temp_container = []
@@ -71,6 +71,9 @@ class AldiScrapper:
                 sleep(1)
             product_data += temp_container
             print(len(temp_container))
+        with open(output_path, mode='w') as file:
+            for datum in product_data:
+                file.write(f'{datum}\n')
         return product_data                   
 
 if __name__ == '__main__':
