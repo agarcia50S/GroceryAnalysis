@@ -58,8 +58,8 @@ class AldiScrapper:
     # collect product info
     def collect_product_info(self, input_path, output_path):
         product_data = []
-        for url in self.extract_urls_from_csv(csv_path):
-            temp_container = []
+        for url in self.extract_urls_from_csv(input_path):
+            temp_container = [url.split('/')[5]]
             soup = BeautifulSoup(self.get_page_source(url), 'html.parser')
             prod_count = int(soup.find('span', {'class':'category-count title-sm'}).text.strip()[1:-1]) # find total product count
             page_count = 1
