@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 import csv
 
-class AldiScrapper:
+class JewelOscoScrapper:
 
     def __init__(self, categories, sub_category_tag, base_url, driver):
         self.categories = categories
