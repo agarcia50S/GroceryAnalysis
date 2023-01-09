@@ -33,9 +33,10 @@ def make_data_container(in_path, out_path, price_slctr, name_qnt_slctr, price_qn
         cat, row = '', [['price','name_qnt','price_per_qnt', 'category']]
         for element in elements:
             if '<' not in element: cat = element.strip()
-            data = get_data_from_html(element, price_slctr, name_qnt_slctr, price_qnt_slctr)
-            data.append(cat)
-            row.append(data)
+            else:
+                data = get_data_from_html(element, price_slctr, name_qnt_slctr, price_qnt_slctr)
+                data.append(cat)
+                row.append(data)
         writer.writerows(row)
 
 # Price Selector: pg142200086price > span:nth-child(1)
