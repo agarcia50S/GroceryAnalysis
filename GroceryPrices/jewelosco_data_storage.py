@@ -16,7 +16,7 @@ def seperate_name_qnt(name_qnt):
         if is_measure(cur) == True or cur.isnumeric() == True: 
             qnt += cur
         else: name += cur
-
+    return name, qnt
 # extract product name and price-quantity data from html
 # input html as string type
 # output data structure with category, name, price-quantity, price/quantity
