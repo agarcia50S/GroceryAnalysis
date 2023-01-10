@@ -27,7 +27,7 @@ def get_data_from_html(html, price_slctr, name_qnt_slctr, price_qnt_slctr):
 
 # iterate over html-elements file and handle category assignment; return 2d array
 def make_data_container(in_path, out_path, price_slctr, name_qnt_slctr, price_qnt_slctr):
-    with open(in_path, mode='r') as in_file, open(out_path, mode='w', newline='') as out_file:
+    with open(in_path, mode='r') as in_file, open(out_path, mode='w', newline='', encoding='utf-8') as out_file:
         elements = in_file.readlines()
         writer = csv.writer(out_file)
         cat, row = '', [['price','name_qnt','price_per_qnt', 'category']]
