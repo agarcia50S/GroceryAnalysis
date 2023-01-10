@@ -13,7 +13,7 @@ def seperate_name_qnt(name_qnt):
     name, qnt = '', ''
     for val in temp:
         cur = val.strip()
-        if is_measure(cur) == True or cur.isnumeric() == True: 
+        if is_measure(cur) or cur.isnumeric(): 
             qnt += cur
         else: name += cur
     return name, qnt
@@ -51,4 +51,7 @@ if __name__ == '__main__':
     price_sel = '.product-price__saleprice'
     name_qnt_sel = '.product-title__name'
     price_qnt_sel = 'div[data-qa="prd-itm-pprc-qty"]'
-    make_data_container(in_path, out_path, price_sel, name_qnt_sel, price_qnt_sel)
+    # make_data_container(in_path, out_path, price_sel, name_qnt_sel, price_qnt_sel)
+
+    prod_name = 'StarKist Tuna Chunk Light in Water - 6.4 Oz'
+    print(seperate_name_qnt(prod_name))
