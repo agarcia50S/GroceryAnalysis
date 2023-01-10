@@ -13,7 +13,7 @@ def seperate_name_qnt(name_qnt):
     name, qnt = '', ''
     for val in temp:
         cur = val.strip()
-        if is_measure(cur) or cur.isnumeric(): 
+        if is_measure(cur) and cur[0].isnumeric(): 
             qnt += cur
         else: name += cur
     return name, qnt
