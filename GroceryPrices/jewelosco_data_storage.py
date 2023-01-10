@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 def is_measure(value):
     for unit in ['lb', 'oz', 'ml', 'g', 'ct', 'pk', 'qt', 'pt']:
         if unit in value.lower(): return True
-        return False
+    return False
 
 # seperate price-quantity string into price and quantity
 def seperate_name_qnt(name_qnt):
