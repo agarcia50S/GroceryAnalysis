@@ -16,7 +16,7 @@ def seperate_name_qnt(name_qnt):
     for val in temp[1:]:
         cur = val.strip()
         if is_measure(cur) and cur[0].isnumeric(): 
-            qnt += cur
+            qnt += f'{cur}-'
         else: name += cur
     return name, qnt
 # extract product name and price-quantity data from html
