@@ -12,8 +12,8 @@ def is_measure(value):
 # seperate price-quantity string into price and quantity
 def seperate_name_qnt(name_qnt):
     temp = name_qnt.split('-')
-    name, qnt = '', ''
-    for val in temp:
+    name, qnt = f'{temp[0]} ', ''
+    for val in temp[1:]:
         cur = val.strip()
         if is_measure(cur) and cur[0].isnumeric(): 
             qnt += cur
