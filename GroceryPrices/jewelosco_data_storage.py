@@ -15,11 +15,11 @@ def is_measure(value):
 # seperate price-quantity string into price and quantity
 def seperate_name_qnt(name_qnt):
     temp = name_qnt.split('-')
+    if len(temp) == 2: return temp[0], temp[1]
     name, qnt = f'{temp[0]} ', ''
     for val in temp[1:]:
-        cur = val.strip()
-        if is_measure(cur) and cur[0].isnumeric(): 
-            qnt += f'{cur}-'
+        cur = val.strip() # WRONG: needs to any non-alpha leading/trailing chars
+        if is_measure(cur): qnt += f'{cur}-'
         else: name += cur
     return name, qnt
 # extract product name and price-quantity data from html
