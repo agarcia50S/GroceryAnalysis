@@ -3,10 +3,13 @@ from bs4 import BeautifulSoup
 
 # check if string is measure
 def is_measure(value):
+    only_unit = ''.join([char.lower() for char in value if char.isalpha()])
     units = ['lb', 'oz', 'ml', 'g', 'ct', 'pk', 
-             'qt', 'pt', 'count', 'fz', 'liter']
+             'qt', 'pt', 'count', 'fz', 'liter',
+             'gallon', 'each', 'ea']
+    if only_unit in units: return only_unit in units
     for unit in units:
-        if unit in value.lower(): return True
+        if unit in only_unit: return unit in only_unit
     return False
 
 # seperate price-quantity string into price and quantity
