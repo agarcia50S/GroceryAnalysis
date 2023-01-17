@@ -6,7 +6,7 @@ def is_measure(value):
     only_unit = ''.join([char.lower() for char in value if char.isalpha()])
     units = ['lb', 'oz', 'ml', 'g', 'ct', 'pk', 
              'qt', 'pt', 'count', 'fz', 'liter',
-             'gallon', 'each', 'ea']
+             'gallon', 'each', 'ea', 'floz']
     if only_unit in units: return only_unit in units
     for unit in units:
         if unit in only_unit: return unit in only_unit
