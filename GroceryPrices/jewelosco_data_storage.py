@@ -9,7 +9,7 @@ def is_measure(value):
              'gallon', 'each', 'ea', 'floz']
     if only_unit in units: return only_unit in units
     for unit in units:
-        if unit in only_unit: return unit in only_unit
+        if unit in only_unit and len(unit) == len(only_unit): return True
     return False
 
 # seperate price-quantity string into price and quantity
