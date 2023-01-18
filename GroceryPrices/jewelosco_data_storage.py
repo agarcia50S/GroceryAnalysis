@@ -36,15 +36,14 @@ def make_data_container(in_path, out_path, price_slctr, name_qnt_slctr, price_qn
     with open(in_path, mode='r') as in_file, open(out_path, mode='w', newline='', encoding='utf-8') as out_file:
         elements = in_file.readlines()
         writer = csv.writer(out_file)
-        cat, row = '', [['price','name_qnt','price_per_qnt', 'category']]
+        prod_category, container = '', [['price','name_qnt','price_per_qnt', 'category']]
         for element in elements:
-            if '<' not in element: cat = element.strip()
+            if '<' not in element: prod_category = element.strip()
             else:
-                data = get_data_from_html(element, price_slctr, name_qnt_slctr, price_qnt_slctr)
-                data.append(cat)
-                row.append(data)
-        writer.writerows(row)
-
+                row = get_data_from_html(element, price_slctr, name_qnt_slctr, price_qnt_slctr)
+                row.append(prod_category)
+                container.append(row)
+        writer.writerows(container)
 # Price Selector: pg142200086price > span:nth-child(1)
 # (Price class: product-price__saleprice product-price__discounted-price)
 # Name-Quantity Selector: #pg960100621
