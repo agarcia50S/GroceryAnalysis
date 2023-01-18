@@ -14,4 +14,5 @@ with open(path, mode='r') as in_f:
 
 # make list into txt file    
 with open(path, mode='w') as out_f:
-    pass
+    for u_val in uniques:
+        out_f.write()
