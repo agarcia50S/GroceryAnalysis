@@ -3,7 +3,7 @@ import sys
 # script takes txt file, removes duplicate items, and
 # creates txt of the SAME NAME w/out duplicate items
 
-path = sys.argv
+path = sys.argv[1]
 
 # make list of unique items
 with open(path, mode='r') as in_f:
