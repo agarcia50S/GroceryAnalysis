@@ -7,7 +7,10 @@ path = sys.argv
 
 # make list of unique items
 with open(path, mode='r') as in_f:
-    pass
+    content = in_f.readlines()
+    uniques = []
+    for item in content:
+        if item not in uniques: uniques.append(item)
 
 # make list into txt file    
 with open(path, mode='w') as out_f:
