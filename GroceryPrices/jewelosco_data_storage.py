@@ -27,6 +27,10 @@ def seperate_name_qnt(name_qnt):
 # input html as string type
 # output data structure with category, name, price-quantity, price/quantity
 def get_data_from_html(html, price_slctr, name_qnt_slctr, price_qnt_slctr):
+    '''
+    Takes html of a product card and returns an arr with the product's
+    price, name-quantity, and price-per-quantity.
+    '''
     soup = BeautifulSoup(html, 'html.parser')
     data = soup.select(f'{price_slctr}, {name_qnt_slctr}, {price_qnt_slctr}')
     return [datum.text for datum in data]
