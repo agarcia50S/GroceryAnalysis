@@ -1,1 +1,14 @@
-import os
+import sys
+
+# script takes txt file, removes duplicate items, and
+# creates txt of the SAME NAME w/out duplicate items
+
+path = sys.argv
+
+# make list of unique items
+with open(path, mode='r') as in_f:
+    pass
+
+# make list into txt file    
+with open(path, mode='w') as out_f:
+    pass
