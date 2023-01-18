@@ -48,6 +48,7 @@ def make_data_container(in_path, out_path, price_slctr, name_qnt_slctr, price_qn
                 row.append(prod_category)
                 container.append(row)
         writer.writerows(container)
+    return container
 # Price Selector: pg142200086price > span:nth-child(1)
 # (Price class: product-price__saleprice product-price__discounted-price)
 # Name-Quantity Selector: #pg960100621
