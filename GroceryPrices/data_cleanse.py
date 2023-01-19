@@ -60,8 +60,9 @@ corrected_names = builder.format_as_table(start.columns.tolist())
 # make into df
 corrected_names_df = pd.DataFrame(corrected_names[1:], columns=corrected_names[0])
 
-starting_fixed_names = pd.DataFrame(fixed_partial_names[1:], columns=fixed_partial_names[0])
-starting_fixed_names.shape
+# drop rows with nan as they are not corrected partial names
+only_corrected_names_df = corrected_names_df.dropna()
+only_corrected_names_df.head()
 # %%
 name_qnt = start['name_qnt'].apply(seperate_name_qnt)
 start['name_qnt_pairs'] = name_qnt
