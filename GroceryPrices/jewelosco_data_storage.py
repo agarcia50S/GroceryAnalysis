@@ -31,7 +31,9 @@ class ExtractAndStore:
         elif self.path_to_html is not None: elements = self.file_to_arr() 
         prod_category, container = '', [header] # ['price','name_qnt','price_per_qnt', 'category']
         for element in elements:
+            # if category name place it in holder and don't make row. 
             if '<' not in element: prod_category = element.strip()
+            # if not category name, make row and append held category name
             else:
                 row = self.get_data_from_html(element)
                 row.append(prod_category)
