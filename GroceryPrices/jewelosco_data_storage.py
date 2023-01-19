@@ -68,12 +68,14 @@ def seperate_name_qnt(name_qnt):
 # Price/Quant data-qa: prd-itm-pprc-qty
 
 if __name__ == '__main__':
-    in_path = 'C:/Users/agarc/PersonalProjects/extracted_data/JO_prod_card_html_data.txt'
-    out_path = 'C:/Users/agarc/PersonalProjects/extracted_data/raw_product_data.csv'
+    in_path = 'C:/Users/agarc/PersonalProjects/test_data/test_prod_data.txt'
+    out_path = 'C:/Users/agarc/PersonalProjects/test_data/test1.csv'
     price_sel = '.product-price__saleprice'
     name_qnt_sel = '.product-title__name'
     price_qnt_sel = 'div[data-qa="prd-itm-pprc-qty"]'
-    # make_data_container(in_path, out_path, price_sel, name_qnt_sel, price_qnt_sel)
 
-    prod_name = 'StarKist Tuna Chunk Light in Water - 6.4 Oz'
-    print(seperate_name_qnt(prod_name))
+    jo_data = ExtractAndStore(price_sel, name_qnt_sel, price_qnt_sel, 
+                              path_to_html=in_path)
+
+    header = ['price','name_qnt','price_per_qnt', 'category']
+    jo_data.format_as_csv(header, out_path=out_path)
