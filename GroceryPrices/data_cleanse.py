@@ -53,8 +53,12 @@ start.head()
 price_sel, price_per_qnt  = '.product-price__saleprice', 'div[data-qa="prd-itm-pprc-qty"]'
 name_qnt = '.product-item-title-tooltip__inner'
 builder = ExtractAndStore(price_sel, price_per_qnt, name_qnt, path_to_html=path + '/JO_prod_card_html_data.txt')
-fixed_partial_names = builder.format_as_table(start.columns.tolist())
-print(fixed_partial_names[0])
+
+# table only contains complete rows for corrected partial names
+corrected_names = builder.format_as_table(start.columns.tolist())
+
+# make into df
+corrected_names_df = pd.DataFrame(corrected_names[1:], columns=corrected_names[0])
 
 starting_fixed_names = pd.DataFrame(fixed_partial_names[1:], columns=fixed_partial_names[0])
 starting_fixed_names.shape
