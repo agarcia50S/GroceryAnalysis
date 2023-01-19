@@ -1,6 +1,43 @@
 import csv
 from bs4 import BeautifulSoup
 
+class ExtractAndStore:
+    def __init__(self, *css_selectors, path_to_html=None, all_html=None):
+        self.all_html = all_html
+        self.path_to_html = path_to_html
+        self.css_selectors = css_selectors
+    
+    def file_to_arr(self):
+        with open(self.path_to_html, mode='r') as in_file:
+            contents = in_file.readlines()
+        return contents
+
+    def get_data_from_html(self, html):
+        '''
+        Takes html of a product card and returns an arr with the product's
+        price, name-quantity, and price-per-quantity.
+        '''
+        soup = BeautifulSoup(html, 'html.parser')
+        data = soup.select(','.join(self.css_selectors))
+        return [datum.text for datum in data]
+
+    def format_as_csv(self, header, out_path):
+        with open(out_path, mode='w', newline='', encoding='utf-8') as out_file:
+            writer = csv.writer(out_file)
+            writer.writerows(self.format_as_table(header))
+
+    def format_as_table(self, header):
+        if self.all_html is not None: elements = self.all_html
+        elif self.path_to_html is not None: elements = self.file_to_arr() 
+        prod_category, container = '', [header] # ['price','name_qnt','price_per_qnt', 'category']
+        for element in elements:
+            if '<' not in element: prod_category = element.strip()
+            else:
+                row = self.get_data_from_html(element)
+                row.append(prod_category)
+                container.append(row)
+        return container
+
 # check if string is measure
 def is_measure(value):
     only_unit = ''.join([char.lower() for char in value if char.isalpha()])
@@ -23,32 +60,7 @@ def seperate_name_qnt(name_qnt):
         elif cur.isnumeric(): qnt += f'{cur}-'
         else: name += cur
     return name, qnt
-# extract product name and price-quantity data from html
-# input html as string type
-# output data structure with category, name, price-quantity, price/quantity
-def get_data_from_html(html, price_slctr, name_qnt_slctr, price_qnt_slctr):
-    '''
-    Takes html of a product card and returns an arr with the product's
-    price, name-quantity, and price-per-quantity.
-    '''
-    soup = BeautifulSoup(html, 'html.parser')
-    data = soup.select(f'{price_slctr}, {name_qnt_slctr}, {price_qnt_slctr}')
-    return [datum.text for datum in data]
 
-# iterate over html-elements file and handle category assignment; return 2d array
-def make_data_container(in_path, out_path, price_slctr, name_qnt_slctr, price_qnt_slctr):
-    with open(in_path, mode='r') as in_file, open(out_path, mode='w', newline='', encoding='utf-8') as out_file:
-        elements = in_file.readlines()
-        writer = csv.writer(out_file)
-        prod_category, container = '', [['price','name_qnt','price_per_qnt', 'category']]
-        for element in elements:
-            if '<' not in element: prod_category = element.strip()
-            else:
-                row = get_data_from_html(element, price_slctr, name_qnt_slctr, price_qnt_slctr)
-                row.append(prod_category)
-                container.append(row)
-        writer.writerows(container)
-    return container
 # Price Selector: pg142200086price > span:nth-child(1)
 # (Price class: product-price__saleprice product-price__discounted-price)
 # Name-Quantity Selector: #pg960100621
