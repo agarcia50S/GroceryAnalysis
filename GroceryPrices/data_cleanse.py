@@ -47,16 +47,6 @@ start.head()
 #%%
 # fix product names that contain partial name with '...'
 
-# get all name_qnt values with '...' in them
-# start['is_partial_name'] = start['name_qnt'].apply(lambda x: '...' in x)
-# partial_names = start[start['is_partial_name'] == True]
-
-# # get df with only full product names
-# start = start[start['is_partial_name'] == False]
-# ending_shape = start.shape
-# print(f'start:{starting_shape}\nending:{ending_shape}\nDiff:{starting_shape[0] - ending_shape[0]}')
-
-
 # make df that only has corrected partial names
 
 # run ExtractAndStore using css select for the div that has full name version of partial names
