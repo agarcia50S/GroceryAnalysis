@@ -3,6 +3,7 @@ import pandas as pd
 from jewelosco_data_storage import is_measure, seperate_name_qnt, ExtractAndStore
 
 def is_pair(pair):
+    # Note: just return condition
     if len(pair[0]) > 0 and len(pair[1]) > 0: return True
     return False
 
@@ -38,8 +39,8 @@ starting_shape = start.shape
 start.head()
 
 #%%
-# fix product names that contain partial name with '...'
-
+############# fix product names that contain partial name with '...' ############
+#%%
 # make df that only has corrected partial names
 
 # run ExtractAndStore using css select for the div that has full name version of partial names
@@ -68,44 +69,71 @@ only_full_names_df.head()
 working_df = pd.concat([only_full_names_df, only_corrected_names_df]).reset_index(drop=True)
 working_df.head()
 
+#%%
+############### Seperating product name and product qauntity #################
 # %%
+# make column containing tuples (name, qnty) or (name, '') if fnc failed
+# to properly seperate name-qnt 
 name_qnt = working_df['name_qnt'].apply(seperate_name_qnt)
 working_df['name_qnt_pairs'] = name_qnt
+
+# create bool col to indicate if seperation success
 working_df['is_pair'] = working_df['name_qnt_pairs'].apply(is_pair)
 
 # %%
-# df containing all name_qnt's that seperate_name_qnt
+# make df containing all failed name-quantity seperations
 failed_seps = working_df[working_df['is_pair'] == False]
+
+# make col with tuples (name, qauntity) or name-quantity if seperation failed
+# fnc returns name_qnt val if seperation failed, else tuple
 failed_seps['name_qnt_pairs'] = failed_seps['name_qnt'].apply(special_split)
-# checks if val is str type as only failed-splits are str's
+
+# make bool col indicating seperation success; only unseperated values are str type
 failed_seps['is_pair'] = failed_seps['name_qnt_pairs'].apply(lambda x: False if type(x) == str else True)
 failed_seps.head()
 
 #%%
-fixed_seps_A = failed_seps[failed_seps['is_pair'] == True]
-fixed_name_qnts = fixed_seps_A.loc[:, ['name_qnt_pairs']]
+# ADDING ROWS WITH NAME_QNT VALS THAT WERE SUCCESSFULLY SEPERATED BY SPECIAL_SPLIT() BACK TO MAIN DF
+
+# make df with only successful seperations, then make Series from df's name_qnt_pairs col
+fixed_name_qnts = failed_seps[failed_seps['is_pair'] == True].loc[:, ['name_qnt_pairs']]
+
+# list all the indices of fixed_name_qnts Series
 index_vals = list(fixed_name_qnts.index)
+
+# make Series from working_df name_qnt_pairs col
 all_name_qnts = working_df.loc[:, ['name_qnt_pairs']]
-temp_A = all_name_qnts.drop(index_vals)
-all_name_qnts = pd.concat([temp_A, fixed_name_qnts]).sort_index()
+
+# drop rows based on matching indices with fixed_name_qnts
+only_seperated = all_name_qnts.drop(index_vals)
+
+# vertically stack both Series together and sort indices so 
+# Series can be properly re-added to working_df
+all_name_qnts = pd.concat([only_seperated, fixed_name_qnts]).sort_index()
 working_df['name_qnt_pairs'] = all_name_qnts['name_qnt_pairs']
+
+# put all quantities from name_qnt_pairs tuples into new col, qnt
 working_df['qnt'] = working_df['name_qnt_pairs'].apply(lambda x: x[1])
 working_df.head()
-#%%
 
 #%%
-# remaining split-fail name_qnt's
+# HANDLE REMAINING FAILED SEPERATIONS
+# make df of remaining split-fail name_qnt's
 remaining_failed_seps = failed_seps[failed_seps['is_pair'] == False]
+
+# seperate price_per_qnt tuples (price / qnt) and place vals in respective new columns
 remaining_failed_seps['price'] = remaining_failed_seps['price_per_qnt'].apply(lambda x: split_price_per_qnt(x)[0])
-# assign to price_qnt_pairs as same header names needed for later concat
 remaining_failed_seps['qnt'] = remaining_failed_seps['price_per_qnt'].apply(lambda x: split_price_per_qnt(x)[1])
 remaining_failed_seps.head()
 
 #%%
-remaining_idx_vals = list(remaining_failed_seps.index)
-temp_B = working_df.drop(remaining_idx_vals)
+# make temp df with all working_df rows except those with indices matching remaining_failed_seps
+temp_B = working_df.drop(list(remaining_failed_seps.index))
+
+# vert stack both dataframes
 working_df = pd.concat([remaining_failed_seps, temp_B]).sort_index()
 working_df.shape
+working_df.head()
 
 #%%
 # clean up / wrangle dataframe
@@ -114,7 +142,7 @@ cleaned = working_df.drop(columns=['name_qnt_pairs', 'is_pair'])
 cleaned['price'] = cleaned['price'].apply(lambda x: clean_price(x, ['.']))
 cleaned.head()
 # %%
-cleaned.to_csv(path + '/JO_cleaned_data.csv')
+cleaned.to_csv(path + '/JO_cleaned_data.csv', index=False)
 # vertically concat both dfs
         
 # %%
