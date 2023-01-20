@@ -120,7 +120,7 @@ cleaned = working_df.drop(columns=['name_qnt_pairs', 'is_pair'])
 cleaned['price'] = cleaned['price'].apply(lambda x: clean_price(x, ['.']))
 cleaned.head()
 # %%
-working_df.to_csv(path + 'JO_cleaned_data.csv')
+working_df.to_csv(path + '/JO_cleaned_data.csv')
 # vertically concat both dfs
         
 # %%
