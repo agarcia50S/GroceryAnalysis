@@ -63,13 +63,13 @@ corrected_names_df = pd.DataFrame(corrected_names[1:], columns=corrected_names[0
 only_corrected_names_df = corrected_names_df.dropna()
 only_corrected_names_df.head()
 # %%
-name_qnt = start['name_qnt'].apply(seperate_name_qnt)
-start['name_qnt_pairs'] = name_qnt
-start['is_pair'] = start['name_qnt_pairs'].apply(is_pair)
+name_qnt = working_df['name_qnt'].apply(seperate_name_qnt)
+working_df['name_qnt_pairs'] = name_qnt
+working_df['is_pair'] = working_df['name_qnt_pairs'].apply(is_pair)
 
 # %%
 # df containing all name_qnt's that seperate_name_qnt
-failed_seps = start[start['is_pair'] == False]
+failed_seps = working_df[working_df['is_pair'] == False]
 failed_seps['name_qnt_pairs'] = failed_seps['name_qnt'].apply(special_split)
 # checks if val is str type as only failed-splits are str's
 failed_seps['is_pair'] = failed_seps['name_qnt_pairs'].apply(lambda x: False if type(x) == str else True)
@@ -79,12 +79,12 @@ failed_seps.head()
 fixed_seps_A = failed_seps[failed_seps['is_pair'] == True]
 fixed_name_qnts = fixed_seps_A.loc[:, ['name_qnt_pairs']]
 index_vals = list(fixed_name_qnts.index)
-all_name_qnts = start.loc[:, ['name_qnt_pairs']]
+all_name_qnts = working_df.loc[:, ['name_qnt_pairs']]
 temp_A = all_name_qnts.drop(index_vals)
 all_name_qnts = pd.concat([temp_A, fixed_name_qnts]).sort_index()
-start['name_qnt_pairs'] = all_name_qnts['name_qnt_pairs']
-start['qnt'] = start['name_qnt_pairs'].apply(lambda x: x[1])
-start.head()
+working_df['name_qnt_pairs'] = all_name_qnts['name_qnt_pairs']
+working_df['qnt'] = working_df['name_qnt_pairs'].apply(lambda x: x[1])
+working_df.head()
 #%%
 
 #%%
@@ -97,19 +97,18 @@ remaining_failed_seps.head()
 
 #%%
 remaining_idx_vals = list(remaining_failed_seps.index)
-temp_B = start.drop(remaining_idx_vals)
-start = pd.concat([remaining_failed_seps, temp_B]).sort_index()
-start.shape
+temp_B = working_df.drop(remaining_idx_vals)
+working_df = pd.concat([remaining_failed_seps, temp_B]).sort_index()
+working_df.shape
 
 #%%
 # clean up / wrangle dataframe
-start['name'] = start['name_qnt_pairs'].apply(lambda x: x[0])
-cleaned = start.drop(columns=['name_qnt_pairs', 'is_pair'])
+working_df['name'] = working_df['name_qnt_pairs'].apply(lambda x: x[0])
+cleaned = working_df.drop(columns=['name_qnt_pairs', 'is_pair'])
 cleaned['price'] = cleaned['price'].apply(lambda x: clean_price(x, ['.']))
 cleaned.head()
 # %%
-start.to_csv(path + 'JO_cleaned_data.csv')
-
+working_df.to_csv(path + 'JO_cleaned_data.csv')
 # vertically concat both dfs
         
 # %%
