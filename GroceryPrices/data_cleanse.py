@@ -133,10 +133,10 @@ remaining_failed_seps.head()
 #%%
 # MAKE DATAFRAME WITH ALL CORRECTLY SEPERATED NAME-QNTS
 # make temp df with all working_df rows except those with indices matching remaining_failed_seps
-temp_B = working_df.drop(list(remaining_failed_seps.index))
+temp = working_df.drop(list(remaining_failed_seps.index))
 
 # vert stack both dataframes
-working_df = pd.concat([remaining_failed_seps, temp_B]).sort_index()
+working_df = pd.concat([remaining_failed_seps, temp]).sort_index()
 working_df.shape
 working_df.head()
 
