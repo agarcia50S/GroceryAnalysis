@@ -131,6 +131,7 @@ remaining_failed_seps['qnt'] = remaining_failed_seps['price_per_qnt'].apply(lamb
 remaining_failed_seps.head()
 
 #%%
+# MAKE DATAFRAME WITH ALL CORRECTLY SEPERATED NAME-QNTS
 # make temp df with all working_df rows except those with indices matching remaining_failed_seps
 temp_B = working_df.drop(list(remaining_failed_seps.index))
 
