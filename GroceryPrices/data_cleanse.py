@@ -109,7 +109,7 @@ working_df.shape
 
 #%%
 # clean up / wrangle dataframe
-working_df['name'] = working_df['name_qnt_pairs'].apply(lambda x: x[0])
+working_df['name'] = working_df['name_qnt_pairs'].apply(lambda x: x[0] if type(x) == tuple else x)
 cleaned = working_df.drop(columns=['name_qnt_pairs', 'is_pair'])
 cleaned['price'] = cleaned['price'].apply(lambda x: clean_price(x, ['.']))
 cleaned.head()
