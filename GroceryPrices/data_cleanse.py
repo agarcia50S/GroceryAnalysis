@@ -4,8 +4,7 @@ from jewelosco_data_storage import is_measure, seperate_name_qnt, ExtractAndStor
 
 def is_pair(pair):
     # Note: just return condition
-    if len(pair[0]) > 0 and len(pair[1]) > 0: return True
-    return False
+    return len(pair[0]) > 0 and len(pair[1]) > 0
 
 # attempts to split prod name
 def special_split(name_qnt, on='–'):
