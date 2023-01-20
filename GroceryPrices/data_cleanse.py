@@ -69,7 +69,7 @@ working_df = pd.concat([only_full_names_df, only_corrected_names_df]).reset_inde
 working_df.head()
 
 #%%
-############### Seperating product name and product qauntity #################
+############### Seperating product name and qauntity #################
 # %%
 # make column containing tuples (name, qnty) or (name, '') if fnc failed
 # to properly seperate name-qnt 
@@ -83,8 +83,9 @@ working_df['is_pair'] = working_df['name_qnt_pairs'].apply(is_pair)
 # make df containing all failed name-quantity seperations
 failed_seps = working_df[working_df['is_pair'] == False]
 
-# make col with tuples (name, qauntity) or name-quantity if seperation failed
-# fnc returns name_qnt val if seperation failed, else tuple
+#%%
+# update name_qnt_pairs col with special_split() processed name_qnt vals 
+# fnc returns name_qnt val if seperation failed, else tuple of name and qnt i.e. (name, qnt)
 failed_seps['name_qnt_pairs'] = failed_seps['name_qnt'].apply(special_split)
 
 # make bool col indicating seperation success; only unseperated values are str type
@@ -116,11 +117,13 @@ working_df['qnt'] = working_df['name_qnt_pairs'].apply(lambda x: x[1])
 working_df.head()
 
 #%%
-# HANDLE REMAINING FAILED SEPERATIONS
+# HANDLE REMAINING FAILED SEPERATIONS BY USING PRICE PER QNT VALUES
 # make df of remaining split-fail name_qnt's
 remaining_failed_seps = failed_seps[failed_seps['is_pair'] == False]
 
-# seperate price_per_qnt tuples (price / qnt) and place vals in respective new columns
+#%%
+# seperate price_per_qnt vals--i.e. (price / qnt)--and place vals in respective new columns
+# split_price_per_qnt splits string on "/" (by default) and removes leading/trailing chars
 remaining_failed_seps['price'] = remaining_failed_seps['price_per_qnt'].apply(lambda x: split_price_per_qnt(x)[0])
 remaining_failed_seps['qnt'] = remaining_failed_seps['price_per_qnt'].apply(lambda x: split_price_per_qnt(x)[1])
 remaining_failed_seps.head()
