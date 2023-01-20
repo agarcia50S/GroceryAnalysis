@@ -82,6 +82,7 @@ working_df['is_pair'] = working_df['name_qnt_pairs'].apply(is_pair)
 # %%
 # make df containing all failed name-quantity seperations
 failed_seps = working_df[working_df['is_pair'] == False]
+failed_seps.head()
 
 #%%
 # update name_qnt_pairs col with special_split() processed name_qnt vals 
@@ -120,6 +121,7 @@ working_df.head()
 # HANDLE REMAINING FAILED SEPERATIONS BY USING PRICE PER QNT VALUES
 # make df of remaining split-fail name_qnt's
 remaining_failed_seps = failed_seps[failed_seps['is_pair'] == False]
+remaining_failed_seps.head()
 
 #%%
 # seperate price_per_qnt vals--i.e. (price / qnt)--and place vals in respective new columns
