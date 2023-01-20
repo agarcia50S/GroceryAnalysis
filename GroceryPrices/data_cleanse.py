@@ -2,12 +2,6 @@
 import pandas as pd
 from jewelosco_data_storage import is_measure, seperate_name_qnt, ExtractAndStore
 
-def seperation_test(arr):
-    for name, qnt in arr:
-        if len(name) < 1 or len(qnt) < 1: return 'TEST FAILED'
-        
-    return 'TEST PASSED'
-
 def is_pair(pair):
     if len(pair[0]) > 0 and len(pair[1]) > 0: return True
     return False
