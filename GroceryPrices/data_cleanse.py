@@ -62,6 +62,18 @@ corrected_names_df = pd.DataFrame(corrected_names[1:], columns=corrected_names[0
 # drop rows with nan as they are not corrected partial names
 only_corrected_names_df = corrected_names_df.dropna()
 only_corrected_names_df.head()
+
+#%%
+# make final working df with full names and corrected partial names
+
+# drop all partial names from start df
+only_full_names_df = start.drop(list(only_corrected_names_df.index.values))
+only_full_names_df.head()
+
+# stack df with only corrected names and df with only full names
+working_df = pd.concat([only_full_names_df, only_corrected_names_df]).reset_index(drop=True)
+working_df.head()
+
 # %%
 name_qnt = working_df['name_qnt'].apply(seperate_name_qnt)
 working_df['name_qnt_pairs'] = name_qnt
