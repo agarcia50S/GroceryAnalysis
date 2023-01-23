@@ -54,7 +54,7 @@ def is_measure(value):
 # seperate price-quantity string into price and quantity
 def seperate_name_qnt(name_qnt):
     temp = name_qnt.split('-')
-    if len(temp) == 2: return temp[0], temp[1]
+    if len(temp) == 2 and is_measure(temp[1]): return temp[0], temp[1]
     name, qnt = f'{temp[0]} ', ''
     for val in temp[1:]:
         cur = val.strip() # WRONG: should be for any non-alpha leading/trailing chars
