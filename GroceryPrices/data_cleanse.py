@@ -8,11 +8,12 @@ def is_pair(pair):
 
 # attempts to split prod name
 def special_split(name_qnt, on='–'):
-    if on in name_qnt: return name_qnt.split(on)
-    for i in range(len(name_qnt)):
-        if name_qnt[i].isnumeric() and is_measure(name_qnt[i:]):
-            # return name, quantity 
-            return name_qnt[:i], name_qnt[i:]
+    if on in name_qnt: return tuple(name_qnt.split(on))
+    for idx in range(len(name_qnt)):
+        # find quantity part of name_qnt str
+        if name_qnt[idx].isnumeric() and is_measure(name_qnt[idx:]):
+            # slit on space between name and qnt sections 
+            return name_qnt[:idx], name_qnt[idx:]
     return name_qnt
 
 def split_price_per_qnt(price_qnt, on='/'):
