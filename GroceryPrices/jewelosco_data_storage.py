@@ -61,7 +61,8 @@ def seperate_name_qnt(name_qnt):
         if is_measure(cur): qnt += cur
         elif cur.isnumeric(): qnt += f'{cur}-'
         else: name += cur
-    return name, qnt
+    if is_measure(qnt): return name, qnt
+    else: return name, ''
 
 # Price Selector: pg142200086price > span:nth-child(1)
 # (Price class: product-price__saleprice product-price__discounted-price)
