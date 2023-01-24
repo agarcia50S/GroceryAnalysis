@@ -33,7 +33,6 @@ class JewelOscoScrapper:
     def store_first_page_urls(self, csv_path=None):
         urls = []
         for category in self.categories:
-
             source = self.get_page_source(self.make_url(f'/shop/aisles/{category}.html'))
             urls += self.collect_sub_category_urls(source)
 
@@ -57,17 +56,20 @@ class JewelOscoScrapper:
             soup = BeautifulSoup(self.get_page_source(url), 'html.parser')
             prod_count = int(soup.find('span', {'class':'category-count title-sm'}).text.strip()[1:-1]) # find total product count
             page_count = 1
+
             while len(temp_container) < prod_count:
                 # combine lists with Tag objects into one big list
                 temp_container += soup.find_all('div', {'class':'product-card-container product-card-container--with-out-ar'})
                 page_count += 1
                 driver.get(f'{url}?sort=&page={str(page_count)}')
                 sleep(1)
+                
             product_data += temp_container
-            print(len(temp_container))
+
         with open(output_path, mode='w') as file:
             for datum in product_data:
                 file.write(f'{datum}\n')
+
         return product_data                   
 
 if __name__ == '__main__':
