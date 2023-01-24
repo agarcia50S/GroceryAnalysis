@@ -31,6 +31,13 @@ def clean_price(money, keep=[]):
         if char.isnumeric() or char in keep: cleaned += char
     return cleaned
 
+def clean_qnt(qnt):
+    if '(' in qnt: return qnt.split('(')[0]
+    for idx, char in enumerate(qnt):
+        if idx < len(qnt) - 1:
+            if char.isalpha() and qnt[idx + 1].isnumeric(): return qnt[idx + 1:]
+    return qnt
+
 #url_split = 'https://www.jewelosco.com/shop/aisles/beverages/soft-drinks.3441.html'.split()
 #html = '<div class="product-card-container product-card-container--with-out-ar"><div class="product-item-142200086"><!----><div class="product-card-container__image-container mt-3"><a tabindex="-1" id="pg142200086Img" data-bpn="142200086" href="/shop/product-details.142200086.html"><picture class="product-image-opaque-full"><source media="(max-width: 575px)" data-srcset="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-mobile-jpg$&amp;defaultImage=Not_Available" srcset="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-mobile-jpg$&amp;defaultImage=Not_Available"><source media="(max-width: 768px)" data-srcset="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-tablet-jpg$&amp;defaultImage=Not_Available" srcset="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-tablet-jpg$&amp;defaultImage=Not_Available"><img class="ab-lazy product-card-container__product-image loaded" data-qa="prd-itm-img" data-src="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-desktop-jpg$&amp;defaultImage=Not_Available" alt="Outshine Strawberry Frozen Fruit Bars - 6 Count" src="//images.albertsons-media.com/is/image/ABS/142200086?$ecom-product-card-desktop-jpg$&amp;defaultImage=Not_Available" data-was-processed="true"></picture></a><!----></div><!----><div class="product-card-container__approx"><!----></div><!----><!----><div class="product-card-container__details mt-3"><div class="product-price"><span class="product-price__saleprice product-price__discounted-price" data-qa="prd-itm-prc" id="pg142200086price"><span class="sr-only">Your Price</span> $4.49 <!----><!----><span class="sr-only" data-qa="each-or-lb">each</span></span><!----><del class="product-price__baseprice" data-qa="prd-itm-prc-del"><span class="sr-only">Original Price</span> $5.79 </del></div></div><div class="product-title"><div class="product-title__text"><a class="product-title__name" data-qa="prd-itm-pttl" id="pg142200086" data-bpn="142200086" href="/shop/product-details.142200086.html">Outshine Strawberry Frozen Fruit Bars - 6 Count</a><!----></div><!----><div class="product-title__details"><!----><div class="product-title__qty" data-qa="prd-itm-pprc-qty" id="pg142200086unitPer">($0.31 / Fl.oz)</div><!----></div><!----><!----><!----><!----><!----><!----><!----><product-coupon-v3><!----><!----></product-coupon-v3></div><!----><!----><!----><quantity-stepper-v3 id="pg142200086-qty"><!----><div class="quantity-stepper-v3"><div class="quantity-stepper-container"><div class="product-btn product-btn--without-ar full-loading"><!----><div class="btn product-btn__add product-btn--signin" data-qa="addbutton" role="button" tabindex="0" id="addButton_142200086" aria-describedby="pg142200086" data-qty-id="pc142200086Inpt" aria-label="Sign in to add 1 unit of Outshine Strawberry Frozen Fruit Bars - 6 Count"> Sign in to add </div><!----><!----></div></div></div><!----><!----></quantity-stepper-v3><!----><!----><!----><!----><!----><!----></div></div>'
 path = 'C:/Users/agarc/PersonalProjects/extracted_data'
@@ -142,8 +149,11 @@ working_df.shape
 working_df.head()
 
 #%%
-# clean up / wrangle dataframe
+#  FINAL CLEANING OF DATA
+
+# NOTE: clean up qnts
 working_df['name'] = working_df['name_qnt_pairs'].apply(lambda x: x[0] if type(x) == tuple else x)
+working_df['qnt'] = working_df['qnt'].apply(clean_qnt)
 cleaned = working_df.drop(columns=['name_qnt_pairs', 'is_pair'])
 cleaned['price'] = cleaned['price'].apply(lambda x: clean_price(x, ['.']))
 cleaned.head()
