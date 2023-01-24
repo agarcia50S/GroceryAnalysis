@@ -331,7 +331,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 5.99,Turano Mini French Rolls - 16 Oz,($0.37 / Ounce),bread-bakery, 16 Oz,Turano Mini French Rolls 
 3.99,Sara Lee Artesano Brioche Hamburger Buns - 8 CT,($0.25 / Ounce),bread-bakery, 8 CT,Sara Lee Artesano Brioche Hamburger Buns 
 9.99,Signature SELECT 4 Variety Cheesecake 6 Inch - 16 Oz,($0.62 / Ounce),bread-bakery, 16 Oz,Signature SELECT 4 Variety Cheesecake 6 Inch 
-7.99,Fresh Baked Harvest Apple Pie - 8 Inch,($7.99 / Each),bread-bakery, 8 Inch,Fresh Baked Harvest Apple Pie 
+7.99,Fresh Baked Harvest Apple Pie - 8 Inch,($7.99 / Each),bread-bakery, Each,Fresh Baked Harvest Apple Pie - 8 Inch
 3.99,Signature Select Cheesecake Bar Lemon Mascarpone - 5 OZ,($0.80 / Ounce),bread-bakery, 5 OZ,Signature Select Cheesecake Bar Lemon Mascarpone 
 3.99,Signature Select Cheesecake Bar Cookies N Cream - 5 OZ,($0.80 / Ounce),bread-bakery, 5 OZ,Signature Select Cheesecake Bar Cookies N Cream 
 9.99,Bakery Pie Pecan 8 Inch,($9.99 / Each),bread-bakery, Each,Bakery Pie Pecan 8 Inch
@@ -383,7 +383,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 4.99,Aunt Millies Live Carb Smart White Bread - 14 OZ,($0.36 / Ounce),bread-bakery, 14 OZ,Aunt Millies Live Carb Smart White Bread 
 3.89,Bakery Bread Soda Bread Irish,($3.89 / Each),bread-bakery, Each,Bakery Bread Soda Bread Irish
 4.79,Pepperidge Farm Bread 15 Grain Whole Grain - 22 Oz,($0.22 / Ounce),bread-bakery, 22 Oz,Pepperidge Farm Bread 15 Grain Whole Grain 
-2.99,S Sel Pull Apart Baguette Garlic - 9,($0.33 / Ounce),bread-bakery, 9,S Sel Pull Apart Baguette Garlic 
+0.33,S Sel Pull Apart Baguette Garlic - 9,($0.33 / Ounce),bread-bakery, Ounce,S Sel Pull Apart Baguette Garlic - 9
 5.29,La Brea Bakery Bread Loaf Whole Grain - 18 Oz,($5.29 / Each),bread-bakery, 18 Oz,La Brea Bakery Bread Loaf Whole Grain 
 4.99,Pepperidge Farm Bread Honey White - 22 Oz,($0.23 / Ounce),bread-bakery, 22 Oz,Pepperidge Farm Bread Honey White 
 4.99,Pepperidge Farm Bread Hawaiian Farmhouse - 22 Oz,($0.23 / Ounce),bread-bakery, 22 Oz,Pepperidge Farm Bread Hawaiian Farmhouse 
@@ -1650,7 +1650,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.00,Lucerne Cheese Slices Colby Jack - 10 Count,($0.38 / Ounce),dairy-eggs-cheese, 10 Count,Lucerne Cheese Slices Colby Jack 
 3.00,Lucerne Cheese Slices Pepper Jack - 10 Count,($0.38 / Ounce),dairy-eggs-cheese, 10 Count,Lucerne Cheese Slices Pepper Jack 
 2.99,Lucerne Cheese Cream - 8 Oz,($0.37 / Ounce),dairy-eggs-cheese, 8 Oz,Lucerne Cheese Cream 
-1.99,Lucerne Milk - Half Gallon (container may vary),($0.03 / Fl.oz),dairy-eggs-cheese, Half Gallon ,Lucerne Milk 
+0.03,Lucerne Milk - Half Gallon (container may vary),($0.03 / Fl.oz),dairy-eggs-cheese, Fl.oz,Lucerne Milk - Half Gallon (container may vary)
 3.00,TruMoo 1% Lowfat Chocolate Milk - 0.5 Gallon,($0.05 / Fl.oz),dairy-eggs-cheese, 0.5 Gallon,TruMoo 1% Lowfat Chocolate Milk 
 6.79,Lucerne Heavy Whipping Cream - 32 Fl. Oz.,($0.21 / Fl.oz),dairy-eggs-cheese, 32 Fl. Oz.,Lucerne Heavy Whipping Cream 
 3.00,TruMoo Chocolate Whole Milk - 0.5 Gallon,($0.05 / Ounce),dairy-eggs-cheese, 0.5 Gallon,TruMoo Chocolate Whole Milk 
@@ -1662,15 +1662,15 @@ price,name_qnt,price_per_qnt,category,qnt,name
 7.49,Lactaid Milk Lactose Free Whole - 96 Fl. Oz.,($0.08 / Fl.oz),dairy-eggs-cheese, 96 Fl. Oz.,Lactaid Milk Lactose Free Whole 
 7.99,Coffee mate Hazelnut Liquid Coffee Creamer - 64 Fl. Oz.,($0.12 / Fl.oz),dairy-eggs-cheese, 64 Fl. Oz.,Coffee mate Hazelnut Liquid Coffee Creamer 
 2.99,Jewel Reduced Fat 2% Milk - 128 Fl. Oz.,($2.99 / Fl.oz),dairy-eggs-cheese, 128 Fl. Oz.,Jewel Reduced Fat 2% Milk 
-5.49,Lactaid Milk Lactose Free Reduced Fat - Half Gallon,($0.09 / Fl.oz),dairy-eggs-cheese, Half Gallon,Lactaid Milk Lactose Free Reduced Fat 
-1.99,Lucerne Milk Lowfat 1% Milkfat - Half Gallon,($0.03 / Fl.oz),dairy-eggs-cheese, Half Gallon,Lucerne Milk Lowfat 1% Milkfat 
-4.49,O Organics Organic Milk Reduced Fat 2% Milkfat - Half Gallon,($0.07 / Fl.oz),dairy-eggs-cheese, Half Gallon,O Organics Organic Milk Reduced Fat 2% Milkfat 
-3.99,a2 Milk Whole Milk - Half Gallon,($0.07 / Fl.oz),dairy-eggs-cheese, Half Gallon,a2 Milk Whole Milk 
+0.09,Lactaid Milk Lactose Free Reduced Fat - Half Gallon,($0.09 / Fl.oz),dairy-eggs-cheese, Fl.oz,Lactaid Milk Lactose Free Reduced Fat - Half Gallon
+0.03,Lucerne Milk Lowfat 1% Milkfat - Half Gallon,($0.03 / Fl.oz),dairy-eggs-cheese, Fl.oz,Lucerne Milk Lowfat 1% Milkfat - Half Gallon
+0.07,O Organics Organic Milk Reduced Fat 2% Milkfat - Half Gallon,($0.07 / Fl.oz),dairy-eggs-cheese, Fl.oz,O Organics Organic Milk Reduced Fat 2% Milkfat - Half Gallon
+0.07,a2 Milk Whole Milk - Half Gallon,($0.07 / Fl.oz),dairy-eggs-cheese, Fl.oz,a2 Milk Whole Milk - Half Gallon
 4.99,Lucerne Milk Reduced Fat Lactose Free - 64 Fl. Oz.,($0.08 / Fl.oz),dairy-eggs-cheese, 64 Fl. Oz.,Lucerne Milk Reduced Fat Lactose Free 
-1.99,Lucerne Fat Free Milk - Half Gallon,($0.03 / Fl.oz),dairy-eggs-cheese, Half Gallon,Lucerne Fat Free Milk 
+0.03,Lucerne Fat Free Milk - Half Gallon,($0.03 / Fl.oz),dairy-eggs-cheese, Fl.oz,Lucerne Fat Free Milk - Half Gallon
 4.79,Fairlife Milk Ultra-Filtered Whole - 52 Fl. Oz.,($0.09 / Fl.oz),dairy-eggs-cheese,52 Fl. Oz.,Fairlife Milk Ultra Filtered Whole
 2.99,Jewel Whole Milk - 128 Fl. Oz.,($2.99 / Fl.oz),dairy-eggs-cheese, 128 Fl. Oz.,Jewel Whole Milk 
-6.99,Horizon Organic Whipping Cream Heavy - 1 Pint,($0.44 / Fl.oz),dairy-eggs-cheese, 1 Pint,Horizon Organic Whipping Cream Heavy 
+0.44,Horizon Organic Whipping Cream Heavy - 1 Pint,($0.44 / Fl.oz),dairy-eggs-cheese, Fl.oz,Horizon Organic Whipping Cream Heavy - 1 Pint
 3.99,Lucerne Butter Salted Sweet Cream - 16 Oz,($0.25 / Ounce),dairy-eggs-cheese, 16 Oz,Lucerne Butter Salted Sweet Cream 
 2.00,FAGE Sour Cream - 16 Oz,($0.13 / Ounce),dairy-eggs-cheese, 16 Oz,FAGE Sour Cream 
 3.99,Lucerne Unsalted Sweet Cream Butter Quarters - 16 Oz,($0.25 / Ounce),dairy-eggs-cheese, 16 Oz,Lucerne Unsalted Sweet Cream Butter Quarters 
@@ -1754,7 +1754,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.99,The Laughing Cow Creamy Original Cheese Spread - 6 Oz,($0.67 / Ounce),deli, 6 Oz,The Laughing Cow Creamy Original Cheese Spread 
 11.99,La Terra Fina Classic Lorraine Quiche - 23 Oz,($0.52 / Ounce),deli, 23 Oz,La Terra Fina Classic Lorraine Quiche 
 11.99,La Terra Fina Spinach And Artichoke Quiche - 23 Oz,($0.52 / Ounce),deli, 23 Oz,La Terra Fina Spinach And Artichoke Quiche 
-6.00,ReadyMeals Chicken Pot Pie Cold - Each (720 Cal),($6.00 / Each),deli, Each ,ReadyMeals Chicken Pot Pie Cold 
+6.00,ReadyMeals Chicken Pot Pie Cold - Each (720 Cal),($6.00 / Each),deli, Each,ReadyMeals Chicken Pot Pie Cold - Each (720 Cal)
 4.99,Resers Main St. Bistro Mashed Potatoes Signature - 24 Oz,($3.33 / Pound),deli, 24 Oz,Resers Main St. Bistro Mashed Potatoes Signature 
 15.99,Giovanni Rana Meat Lasagna - 40 OZ,($0.40 / Ounce),deli, 40 OZ,Giovanni Rana Meat Lasagna 
 5.49,Resers Main St. Bistro Baked Potatoes Scalloped - 20 Oz,($0.27 / Ounce),deli, 20 Oz,Resers Main St. Bistro Baked Potatoes Scalloped 
@@ -1851,20 +1851,20 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.99,Signature CafÃ© Loaded Potato Salad - 16 Oz,($0.25 / Ounce),deli, 16 Oz,Signature CafÃ© Loaded Potato Salad 
 3.99,Resers Relish Cranberry Orange - 12 Oz,($0.33 / Ounce),deli, 12 Oz,Resers Relish Cranberry Orange 
 2.75,Deli Pasta Italiano - 0.50 Lb,($5.49 / Lb),deli, 0.50 Lb,Deli Pasta Italiano 
-3.99,ReadyMeals Combo Tuna Salad - Each (440 Cal),($3.99 / Each),deli, Each ,ReadyMeals Combo Tuna Salad 
+3.99,ReadyMeals Combo Tuna Salad - Each (440 Cal),($3.99 / Each),deli, Each,ReadyMeals Combo Tuna Salad - Each (440 Cal)
 4.50,Deli Tuna Salad - 0.50 Lb,($8.99 / Lb),deli, 0.50 Lb,Deli Tuna Salad 
 4.50,Deli Rotisserie Chicken Salad - 0.50 Lb,($8.99 / Lb),deli, 0.50 Lb,Deli Rotisserie Chicken Salad 
 3.99,Signature CafÃ© Mustard Potato Salad - 16 Oz,($0.25 / Ounce),deli, 16 Oz,Signature CafÃ© Mustard Potato Salad 
 5.00,Taylor Farms White Meat Chicken Salad - 0.50 Lb,($9.99 / Lb),deli, 0.50 Lb,Taylor Farms White Meat Chicken Salad 
 4.25,Parmesan Bowtie Pasta Salad - 0.50 Lb,($8.49 / Lb),deli, 0.50 Lb,Parmesan Bowtie Pasta Salad 
-5.99,Deli Chef Salad - 12 Oz (290 Cal),($5.99 / Each),deli, 12 Oz ,Deli Chef Salad 
+5.99,Deli Chef Salad - 12 Oz (290 Cal),($5.99 / Each),deli, Each,Deli Chef Salad - 12 Oz (290 Cal)
 3.99,ReadyMeal Turkey & Cheese Combo - Each,($3.99 / Each),deli, Each,ReadyMeal Turkey & Cheese Combo 
 8.91,ReadyMeal Parmesan Bowtie Pasta Salad Cold - LB,($8.49 / Lb),deli, LB,ReadyMeal Parmesan Bowtie Pasta Salad Cold 
 4.49,Resers Potato Salad Red Skin - 16 Oz,($0.28 / Ounce),deli, 16 Oz,Resers Potato Salad Red Skin 
-5.99,Deli Caesar Salad With Chicken - 11 Oz (360 Cal),($5.99 / Each),deli, 11 Oz ,Deli Caesar Salad With Chicken 
-3.99,ReadyMeal Salami & Cheese Combo - Each (770 Cal),($3.99 / Each),deli, Each ,ReadyMeal Salami & Cheese Combo 
+5.99,Deli Caesar Salad With Chicken - 11 Oz (360 Cal),($5.99 / Each),deli, Each,Deli Caesar Salad With Chicken - 11 Oz (360 Cal)
+3.99,ReadyMeal Salami & Cheese Combo - Each (770 Cal),($3.99 / Each),deli, Each,ReadyMeal Salami & Cheese Combo - Each (770 Cal)
 9.99,Resers Mustard Potato Salad - 48 Oz,($3.33 / Lb),deli, 48 Oz,Resers Mustard Potato Salad 
-3.99,ReadyMeal Protein Combo - Each (680 Cal),($3.99 / Each),deli, Each ,ReadyMeal Protein Combo 
+3.99,ReadyMeal Protein Combo - Each (680 Cal),($3.99 / Each),deli, Each,ReadyMeal Protein Combo - Each (680 Cal)
 12.99,DeLallo Antipasto Gourmet Tray - 16 Oz,($0.81 / Ounce),deli, 16 Oz,DeLallo Antipasto Gourmet Tray 
 4.99,Kings Hawaiian Savory Butter Rolls - 12 Count - 12 oz.,($0.42 / Ounce),deli,12 oz.,Kings Hawaiian Savory Butter Rolls - 12 Count - 
 6.49,Signature Reserve Olives Calamata Pitted Marinated - 7 OZ,($0.93 / Ounce),deli, 7 OZ,Signature Reserve Olives Calamata Pitted Marinated 
@@ -1894,31 +1894,31 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.49,Boars Head Sauerkraut - 16 Oz,($0.22 / Ounce),deli, 16 Oz,Boars Head Sauerkraut 
 3.99,ReadyMeals Traditional Chicken Salad Croissant Sandwich - EA,($3.99 / Each),deli, EA,ReadyMeals Traditional Chicken Salad Croissant Sandwich 
 4.49,ReadyMeals Turkey Bacon Croissant Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Turkey Bacon Croissant Sandwich 
-6.49,Boars Head Ovengold Pinwheel Self Serve - Each (490 Cal),($6.49 / Each),deli, Each ,Boars Head Ovengold Pinwheel Self Serve 
+6.49,Boars Head Ovengold Pinwheel Self Serve - Each (490 Cal),($6.49 / Each),deli, Each,Boars Head Ovengold Pinwheel Self Serve - Each (490 Cal)
 4.49,ReadyMeals Pan Roasted Turkey & Cheddar Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Pan Roasted Turkey & Cheddar Sandwich 
-6.49,Boars Head Cranberry Turkey Wrap - Each (740 Cal),($6.49 / Each),deli, Each ,Boars Head Cranberry Turkey Wrap 
+6.49,Boars Head Cranberry Turkey Wrap - Each (740 Cal),($6.49 / Each),deli, Each,Boars Head Cranberry Turkey Wrap - Each (740 Cal)
 3.99,Deluxe Combo Sliders Sandwich - EA,($3.99 / Each),deli, EA,Deluxe Combo Sliders Sandwich 
 3.99,ReadyMeals Classic Egg Salad Croissant Sandwich - EA,($3.99 / Each),deli, EA,ReadyMeals Classic Egg Salad Croissant Sandwich 
-6.49,Signature Cafe Italian Meat Sub Sandwich - Each (930 Cal),($6.49 / Each),deli, Each ,Signature Cafe Italian Meat Sub Sandwich 
+6.49,Signature Cafe Italian Meat Sub Sandwich - Each (930 Cal),($6.49 / Each),deli, Each,Signature Cafe Italian Meat Sub Sandwich - Each (930 Cal)
 4.49,ReadyMeals Turkey Bacon & Cheddar Pretzel Duo Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Turkey Bacon & Cheddar Pretzel Duo Sandwich 
 4.49,ReadyMeals Ham & Swiss Pretzel Duo Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Ham & Swiss Pretzel Duo Sandwich 
 6.49,Boars Head Pit Craft Turkey Wrap - EACH,($6.49 / Each),deli, EACH,Boars Head Pit Craft Turkey Wrap 
 6.99,Jewel Turkey Club Wrap - 10.75 OZ,($0.65 / Ounce),deli, 10.75 OZ,Jewel Turkey Club Wrap 
 4.49,ReadyMeals Roast Beef & Cheddar Cheese Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Roast Beef & Cheddar Cheese Sandwich 
 4.49,ReadyMeals Ham & Turkey Pretzel Duo Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Ham & Turkey Pretzel Duo Sandwich 
-6.49,Boars Head Ovengold Turkey Sandwich - Each (460 Cal),($6.49 / Each),deli, Each ,Boars Head Ovengold Turkey Sandwich 
+6.49,Boars Head Ovengold Turkey Sandwich - Each (460 Cal),($6.49 / Each),deli, Each,Boars Head Ovengold Turkey Sandwich - Each (460 Cal)
 4.49,ReadyMeals Ham & Turkey Club On Everything Roll - EA,($4.49 / Each),deli, EA,ReadyMeals Ham & Turkey Club On Everything Roll 
 4.49,ReadyMeals Peppered Turkey & Smoked Gouda Sandwich - EA,($4.49 / Each),deli, EA,ReadyMeals Peppered Turkey & Smoked Gouda Sandwich 
-6.49,Signature Cafe Large 3 Meat & Cheese Sub - 15 Oz (750 Cal),($6.49 / Each),deli, 15 Oz ,Signature Cafe Large 3 Meat & Cheese Sub 
-6.49,Signature Cafe Large Turkey & Cheese Sub - 15 Oz (700 Cal),($0.43 / Ounce),deli, 15 Oz ,Signature Cafe Large Turkey & Cheese Sub 
-6.49,Boars Head Ovengold Turkey Slider 3 Count - Each (490 Cal),($6.49 / Each),deli, Each ,Boars Head Ovengold Turkey Slider 3 Count 
-6.49,Boars Head Smokemaster Ham Slider 3 Count - Each (580 Cal),($6.49 / Each),deli, Each ,Boars Head Smokemaster Ham Slider 3 Count 
-6.49,Signature Cafe Large Ham & Cheese Sub - 15 Oz (650 Cal),($6.49 / Each),deli, 15 Oz ,Signature Cafe Large Ham & Cheese Sub 
-6.49,Boars Head London Broil Sandwich Gng Cold - Each (470 Cal),($6.49 / Each),deli, Each ,Boars Head London Broil Sandwich Gng Cold 
+6.49,Signature Cafe Large 3 Meat & Cheese Sub - 15 Oz (750 Cal),($6.49 / Each),deli, Each,Signature Cafe Large 3 Meat & Cheese Sub - 15 Oz (750 Cal)
+0.43,Signature Cafe Large Turkey & Cheese Sub - 15 Oz (700 Cal),($0.43 / Ounce),deli, Ounce,Signature Cafe Large Turkey & Cheese Sub - 15 Oz (700 Cal)
+6.49,Boars Head Ovengold Turkey Slider 3 Count - Each (490 Cal),($6.49 / Each),deli, Each,Boars Head Ovengold Turkey Slider 3 Count - Each (490 Cal)
+6.49,Boars Head Smokemaster Ham Slider 3 Count - Each (580 Cal),($6.49 / Each),deli, Each,Boars Head Smokemaster Ham Slider 3 Count - Each (580 Cal)
+6.49,Signature Cafe Large Ham & Cheese Sub - 15 Oz (650 Cal),($6.49 / Each),deli, Each,Signature Cafe Large Ham & Cheese Sub - 15 Oz (650 Cal)
+6.49,Boars Head London Broil Sandwich Gng Cold - Each (470 Cal),($6.49 / Each),deli, Each,Boars Head London Broil Sandwich Gng Cold - Each (470 Cal)
 6.99,Jewel Caesar Wrap - 9.5 OZ,($0.74 / Ounce),deli, 9.5 OZ,Jewel Caesar Wrap 
 3.99,Signature Cafe Seafood Salad Croissant - 5 OZ,($0.80 / Ounce),deli, 5 OZ,Signature Cafe Seafood Salad Croissant 
 6.99,Afc Sushi Crunchy Ca Roll Sp - 7 OZ,($1.00 / Ounce),deli, 7 OZ,Afc Sushi Crunchy Ca Roll Sp 
-10.99,Spicy Tiger Roll* - 12.24 Oz (Available After 11 AM),($0.98 / Ounce),deli, 12.24 Oz ,Spicy Tiger Roll* 
+0.98,Spicy Tiger Roll* - 12.24 Oz (Available After 11 AM),($0.98 / Ounce),deli, Ounce,Spicy Tiger Roll* - 12.24 Oz (Available After 11 AM)
 10.49,Advanced Fresh Concepts Sushi Special Rainbow Roll* - 9 Oz,($1.17 / Ounce),deli, 9 Oz,Advanced Fresh Concepts Sushi Special Rainbow Roll* 
 6.99,Afc Chef Summer Roll 2 - 5 OZ,($1.40 / Ounce),deli, 5 OZ,Afc Chef Summer Roll 2 
 8.49,Afc Sushi Spicy Shrimp Roll Sp - 7 OZ,($1.21 / Ounce),deli, 7 OZ,Afc Sushi Spicy Shrimp Roll Sp 
@@ -1934,7 +1934,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 8.99,Afc Sushi Crunchy Shrimp Roll 12 Ct - 11.25 OZ,($0.80 / Ounce),deli, 11.25 OZ,Afc Sushi Crunchy Shrimp Roll 12 Ct 
 5.49,Afc Calamari Salad - 4 OZ,($1.37 / Ounce),deli, 4 OZ,Afc Calamari Salad 
 19.99,Afc Sushi Field Goal Platter - 20.363 OZ,($1.04 / Ounce),deli, 20.363 OZ,Afc Sushi Field Goal Platter 
-3.99,ReadyMeal Protein Combo - Each (680 Cal),($3.99 / Each),deli, Each ,ReadyMeal Protein Combo 
+3.99,ReadyMeal Protein Combo - Each (680 Cal),($3.99 / Each),deli, Each,ReadyMeal Protein Combo - Each (680 Cal)
 6.99,PC Organic Original - Each,($0.75 / Ounce),deli, Each,PC Organic Original 
 7.99,Snack Factory Pretzel Crisps Bites Honey Mustard - 12 Oz,($0.67 / Ounce),deli, 12 Oz,Snack Factory Pretzel Crisps Bites Honey Mustard 
 3.49,Open Nature Crackers Flatbread Everything - 10 Oz,($0.35 / Ounce),deli, 10 Oz,Open Nature Crackers Flatbread Everything 
@@ -2120,7 +2120,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.00,Welchs Smoothie Mixed Berry Drink In A Pouch - 6 Fl. Oz.,($0.50 / Fl.oz),frozen-foods, 6 Fl. Oz.,Welchs Smoothie Mixed Berry Drink In A Pouch 
 1.99,Signature SELECT Lemonade Frozen Concentrate - 12 Fl. Oz.,($0.17 / Fl.oz),frozen-foods, 12 Fl. Oz.,Signature SELECT Lemonade Frozen Concentrate 
 2.79,Signature SELECT Juice Calcium Enriched Orange - 12 Fl. Oz.,($0.23 / Fl.oz),frozen-foods, 12 Fl. Oz.,Signature SELECT Juice Calcium Enriched Orange 
-2.49,Party Ice - 7 Lbs,($0.36 / Pound),frozen-foods, 7 Lbs,Party Ice 
+0.36,Party Ice - 7 Lbs,($0.36 / Pound),frozen-foods, Pound,Party Ice - 7 Lbs
 4.29,Bacardi Mixers Frozen Concentrated Margarita - 10 Fl. Oz.,($0.43 / Fl.oz),frozen-foods, 10 Fl. Oz.,Bacardi Mixers Frozen Concentrated Margarita 
 2.49,Signature SELECT Ice Cubed Crystal Clear - 7 Lb,($0.02 / Lb),frozen-foods, 7 Lb,Signature SELECT Ice Cubed Crystal Clear 
 2.99,5lb Classic Cube - EA,($2.99 / Each),frozen-foods, EA,5lb Classic Cube 
@@ -2184,7 +2184,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 2.99,Green Asparagus,($2.99 / Lb),fruits-vegetables, Lb,Green Asparagus
 0.99,Cucumber,($0.99 / Each),fruits-vegetables, Each,Cucumber
 4.29,Signature Farms Romaine Hearts Prepackaged - 3 Count,($1.43 / Count),fruits-vegetables, 3 Count,Signature Farms Romaine Hearts Prepackaged 
-2.99,Celery - 1 Bunch,($2.99 / Each),fruits-vegetables, 1 Bunch,Celery 
+2.99,Celery - 1 Bunch,($2.99 / Each),fruits-vegetables, Each,Celery - 1 Bunch
 4.99,Signature Farms Gold Potatoes Prepackaged - 5 Lb,($1.00 / Lb),fruits-vegetables, 5 Lb,Signature Farms Gold Potatoes Prepackaged 
 4.99,Russet Potatoes Prepackaged - 10 Lb,($0.50 / Lb),fruits-vegetables, 10 Lb,Russet Potatoes Prepackaged 
 2.49,Iceberg Lettuce,($2.49 / Each),fruits-vegetables, Each,Iceberg Lettuce
@@ -2206,7 +2206,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 3.29,Organic Carrots Prepackaged - 2lb,($1.65 / Lb),fruits-vegetables, 2lb,Organic Carrots Prepackaged 
 1.99,Orange Bell Pepper,($1.99 / Each),fruits-vegetables, Each,Orange Bell Pepper
 1.79,Cucumber Long Hot House English,($1.79 / Each),fruits-vegetables, Each,Cucumber Long Hot House English
-1.50,Green Onions - 1 Bunch,($1.50 / Each),fruits-vegetables, 1 Bunch,Green Onions 
+1.50,Green Onions - 1 Bunch,($1.50 / Each),fruits-vegetables, Each,Green Onions - 1 Bunch
 5.99,Organic Green Asparagus,($5.99 / Lb),fruits-vegetables, Lb,Organic Green Asparagus
 5.99,Signature Farms Sweet Mini Peppers - 32 Oz,($0.19 / Ounce),fruits-vegetables, 32 Oz,Signature Farms Sweet Mini Peppers 
 6.99,Wonderful Pistachios Roasted & Salted Pistachios - 16 Oz,($0.44 / Ounce),fruits-vegetables, 16 Oz,Wonderful Pistachios Roasted & Salted Pistachios 
@@ -2566,7 +2566,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 41.22,USDA Choice Beef Ribeye Steak Boneless Value Pack - 2.5 Lb,($16.49 / Lb),meat-seafood, 2.5 Lb,USDA Choice Beef Ribeye Steak Boneless Value Pack 
 25.47,USDA Choice Beef Cross Rib Chuck Roast Boneless - 3 Lb,($8.49 / Lb),meat-seafood, 3 Lb,USDA Choice Beef Cross Rib Chuck Roast Boneless 
 20.97,USDA Choice Beef Bottom Round Roast - 3.00 Lb,($6.99 / Lb),meat-seafood, 3.00 Lb,USDA Choice Beef Bottom Round Roast 
-11.24,USDA Choice Beef For Stew - 1.50 Lbs.,($7.49 / Lb),meat-seafood, 1.50 Lbs.,USDA Choice Beef For Stew 
+7.49,USDA Choice Beef For Stew - 1.50 Lbs.,($7.49 / Lb),meat-seafood, Lb,USDA Choice Beef For Stew - 1.50 Lbs.
 20.97,USDA Choice Beef Eye Of Round Roast - 3.00 Lb,($6.99 / Lb),meat-seafood, 3.00 Lb,USDA Choice Beef Eye Of Round Roast 
 16.49,USDA Choice Beef Ribeye Steak Boneless - 1.00 Lb,($16.49 / Lb),meat-seafood, 1.00 Lb,USDA Choice Beef Ribeye Steak Boneless 
 137.66,Beef Rib Roast Bone In Imported - Weight Between 8-11 Lb,($14.49 / Lb),meat-seafood,11 Lb,Beef Rib Roast Bone In Imported  Weight Between 8
@@ -2576,7 +2576,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 21.74,USDA Choice Beef Loin T-Bone Steak Prepacked - 1.50 Lb,($14.49 / Lb),meat-seafood,1.50 Lb,USDA Choice Beef Loin T Bone Steak Prepacked
 16.98,USDA Choice Beef Chuck Short Ribs - 2.00 Lb,($8.49 / Lb),meat-seafood, 2.00 Lb,USDA Choice Beef Chuck Short Ribs 
 6.49,USDA Choice Beef Sirloin Petite Steak - 1 Lb.,($6.49 / Lb),meat-seafood, 1 Lb.,USDA Choice Beef Sirloin Petite Steak 
-22.72,USDA Choice Beef For Stew Value Pack - 3.50 Lbs.,($6.49 / Lb),meat-seafood, 3.50 Lbs.,USDA Choice Beef For Stew Value Pack 
+6.49,USDA Choice Beef For Stew Value Pack - 3.50 Lbs.,($6.49 / Lb),meat-seafood, Lb,USDA Choice Beef For Stew Value Pack - 3.50 Lbs.
 29.98,USDA Choice Beef Tri Tip Loin Roast - 2.50 Lb,($11.99 / Lb),meat-seafood, 2.50 Lb,USDA Choice Beef Tri Tip Loin Roast 
 41.94,USDA Choice Beef Top Loin Roast Boneless - 6.00 Lb,($6.99 / Lb),meat-seafood, 6.00 Lb,USDA Choice Beef Top Loin Roast Boneless 
 7.99,USDA Choice Beef Top Loin Sirloin Steak Boneless - 1.00 Lb,($7.99 / Lb),meat-seafood, 1.00 Lb,USDA Choice Beef Top Loin Sirloin Steak Boneless 
@@ -2660,7 +2660,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 5.45,Signature Farms Bone In Chicken Thighs Value Pack - 5.50 Lb,($0.99 / Lb),meat-seafood, 5.50 Lb,Signature Farms Bone In Chicken Thighs Value Pack 
 10.47,Chicken Breast Boneless Skinless - 3 Lb,($3.49 / Lb),meat-seafood, 3 Lb,Chicken Breast Boneless Skinless 
 14.95,Signature Farms Chicken Breast Split Value Pack - 5.00 Lb,($2.99 / Lb),meat-seafood, 5.00 Lb,Signature Farms Chicken Breast Split Value Pack 
-13.97,Signature Farms Chicken Wings Value Pack - 3.5 Lbs.,($3.99 / Lb),meat-seafood, 3.5 Lbs.,Signature Farms Chicken Wings Value Pack 
+3.99,Signature Farms Chicken Wings Value Pack - 3.5 Lbs.,($3.99 / Lb),meat-seafood, Lb,Signature Farms Chicken Wings Value Pack - 3.5 Lbs.
 8.98,Chicken Breast Boneless Skinless Hand Trimmed - 2 Lb,($4.49 / Lb),meat-seafood, 2 Lb,Chicken Breast Boneless Skinless Hand Trimmed 
 10.47,Chicken Thighs Boneless Skinless Value Pack - 3 Lb,($3.49 / Lb),meat-seafood, 3 Lb,Chicken Thighs Boneless Skinless Value Pack 
 11.24,PERDUE Fresh Boneless Skinless Chicken Breasts - 1.50 Lb,($7.49 / Lb),meat-seafood, 1.50 Lb,PERDUE Fresh Boneless Skinless Chicken Breasts 
@@ -2691,7 +2691,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 23.92,Cooks Ham Butt Portions - 8 Lb,($2.99 / Lb),meat-seafood, 8 Lb,Cooks Ham Butt Portions 
 10.47,Meat Counter Pork Steak Shoulder Blade Value Pack - 3.50 Lb,($2.99 / Lb),meat-seafood, 3.50 Lb,Meat Counter Pork Steak Shoulder Blade Value Pack 
 16.23,Meat Counter Pork Roast Loin Top Loin Boneless - 2.50 Lb,($6.49 / Lb),meat-seafood, 2.50 Lb,Meat Counter Pork Roast Loin Top Loin Boneless 
-12.22,Pork Loin Chop Assorted - 3.50 Lbs.,($3.49 / Lb),meat-seafood, 3.50 Lbs.,Pork Loin Chop Assorted 
+3.49,Pork Loin Chop Assorted - 3.50 Lbs.,($3.49 / Lb),meat-seafood, Lb,Pork Loin Chop Assorted - 3.50 Lbs.
 27.90,Cooks Ham Shank Portions - 10 Lb,($2.79 / Lb),meat-seafood, 10 Lb,Cooks Ham Shank Portions 
 16.47,Meat Counter Pork Loin Rib Chops Bone In Value Pack - 3 LB,($5.49 / Lb),meat-seafood, 3 LB,Meat Counter Pork Loin Rib Chops Bone In Value Pack 
 8.99,Pork Loin Chops Bone In - 1.50 Lb,($5.99 / Lb),meat-seafood, 1.50 Lb,Pork Loin Chops Bone In 
@@ -2837,10 +2837,10 @@ price,name_qnt,price_per_qnt,category,qnt,name
 6.49,Signature SELECT Donut Shop Collection Coffee Arabica Single Serve Cups Medium Roast - 12 Count,($0.54 / Count),beverages, 12 Count,Signature SELECT Donut Shop Collection Coffee Arabica Single Serve Cups Medium Roast 
 15.99,Starbucks Breakfast Blend 100% Arabica Medium Roast Ground Coffee Bag - 18 Oz,($0.89 / Ounce),beverages, 18 Oz,Starbucks Breakfast Blend 100% Arabica Medium Roast Ground Coffee Bag 
 6.99,BUBBL'R Antioxidant Sparkling Water Twisted Elix'r - 6-12 Fl Oz,($0.10 / Fl.oz),beverages,6-12 Fl Oz,BUBBL'R Antioxidant Sparkling Water Twisted Elix'r  
-13.99,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles,($0.07 / Fl.oz),beverages,17 fl. oz. Bottles,Sparkling Ice Sparkling Water Variety Pack 12
+0.07,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles,($0.07 / Fl.oz),beverages, Fl.oz,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles
 6.99,BUBBL'R Antioxidant Sparkling Water Cherry Guava Blend'r - 6-12 Fl Oz,($0.10 / Ounce),beverages,6-12 Fl Oz,BUBBL'R Antioxidant Sparkling Water Cherry Guava Blend'r  
 5.99,Dasani Water Purified Enhanced With Minerals Bottled 24 Count - 16.9 Fl. Oz.,($0.01 / Fl.oz),beverages, 16.9 Fl. Oz.,Dasani Water Purified Enhanced With Minerals Bottled 24 Count 
-13.99,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles,($0.07 / Fl.oz),beverages,17 fl. oz. Bottles,Sparkling Ice Sparkling Water Variety Pack 12
+0.07,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles,($0.07 / Fl.oz),beverages, Fl.oz,Sparkling Ice Sparkling Water Variety Pack 12-17 fl. oz. Bottles
 13.99,S. PELLEGRINO Sparkling Natural Mineral Water - 12-16.9 Fl. Oz.,($0.07 / Fl.oz),beverages,12-16.9 Fl. Oz.,S. PELLEGRINO Sparkling Natural Mineral Water  
 6.39,vitaminwater Zero Water Beverage Nutrient Enhanced Squeezed Lemonade - 6-16.9 Fl. Oz.,($0.06 / Fl.oz),beverages,6-16.9 Fl. Oz.,vitaminwater Zero Water Beverage Nutrient Enhanced Squeezed Lemonade  
 5.99,Spindrift Blood Orange Tangerine Sparkling Water - 8-12 Fl. Oz.,($0.06 / Fl.oz),beverages,8-12 Fl. Oz.,Spindrift Blood Orange Tangerine Sparkling Water  
@@ -3094,7 +3094,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 2.99,Signature SELECT Flour All Purpose Pre-Sifted Enriched Bleached - 5 Lb,($0.04 / Ounce),condiments-spice-bake,5 Lb,Signature SELECT Flour All Purpose Pre Sifted Enriched Bleached
 7.69,King Arthur Baking Company Unbleached All Purpose Flour - 5 Lb,($1.54 / Pound),condiments-spice-bake, 5 Lb,King Arthur Baking Company Unbleached All Purpose Flour 
 4.49,Gold Medal Bleached Enriched Presifted All Purpose Flour - 5 Lb,($0.06 / Ounce),condiments-spice-bake, 5 Lb,Gold Medal Bleached Enriched Presifted All Purpose Flour 
-4.99,Ghirardelli Premium Baking Semi-Sweet Chocolate Chips – 12 Oz.,($0.42 / Ounce),condiments-spice-bake,Sweet Chocolate Chips – 12 Oz.,Ghirardelli Premium Baking Semi
+4.99,Ghirardelli Premium Baking Semi-Sweet Chocolate Chips – 12 Oz.,($0.42 / Ounce),condiments-spice-bake, 12 Oz.,Ghirardelli Premium Baking Semi-Sweet Chocolate Chips 
 2.99,Signature SELECT Flour All Purpose Pre-Sifted Enriched Unbleached - 5 Lb,($0.04 / Ounce),condiments-spice-bake,5 Lb,Signature SELECT Flour All Purpose Pre Sifted Enriched Unbleached
 4.29,Toll House Butterscotch Artificially Flavored Morsels - 11 Oz,($0.39 / Ounce),condiments-spice-bake, 11 Oz,Toll House Butterscotch Artificially Flavored Morsels 
 3.99,Kikkoman Soy Sauce Less Sodium All-Purpose Seasoning - 10 Fl. Oz.,($0.40 / Fl.oz),condiments-spice-bake,10 Fl. Oz.,Kikkoman Soy Sauce Less Sodium All Purpose Seasoning
@@ -3265,7 +3265,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 2.79,Lucerne Cheese Finely Shredded Mexican Style 4 Cheese Blend - 8 Oz,($0.35 / Ounce),dairy-eggs-cheese, 8 Oz,Lucerne Cheese Finely Shredded Mexican Style 4 Cheese Blend 
 2.79,Lucerne Cheese Shredded Low-Moisture Part-Skim Mozzarella - 8 Oz,($0.35 / Ounce),dairy-eggs-cheese,8 Oz,Lucerne Cheese Shredded Low Moisture PartSkim Mozzarella
 5.99,Philadelphia Original Whipped Cream Cheese Spread Tub - 12 Oz,($0.50 / Ounce),dairy-eggs-cheese, 12 Oz,Philadelphia Original Whipped Cream Cheese Spread Tub 
-1.99,Lucerne Milk Reduced Fat 2% Milkfat - 64 Fl. Oz. (package may vary),($0.03 / Fl.oz),dairy-eggs-cheese, 64 Fl. Oz. ,Lucerne Milk Reduced Fat 2% Milkfat 
+0.03,Lucerne Milk Reduced Fat 2% Milkfat - 64 Fl. Oz. (package may vary),($0.03 / Fl.oz),dairy-eggs-cheese, Fl.oz,Lucerne Milk Reduced Fat 2% Milkfat - 64 Fl. Oz. (package may vary)
 7.99,Coffee mate French Vanilla Liquid Coffee Creamer - 64 Fl. Oz.,($0.12 / Fl.oz),dairy-eggs-cheese, 64 Fl. Oz.,Coffee mate French Vanilla Liquid Coffee Creamer 
 4.79,Coffee mate Peppermint Mocha Liquid Coffee Creamer - 32 Fl. Oz.,($0.15 / Fl.oz),dairy-eggs-cheese, 32 Fl. Oz.,Coffee mate Peppermint Mocha Liquid Coffee Creamer 
 4.99,Pacific Almond Milk Original Unsweetened Organic - 32 Fl. Oz.,($0.16 / Fl.oz),dairy-eggs-cheese, 32 Fl. Oz.,Pacific Almond Milk Original Unsweetened Organic 
@@ -3276,7 +3276,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 4.79,Coffee mate French Vanilla Liquid Coffee Creamer - 32 Fl. Oz.,($0.15 / Fl.oz),dairy-eggs-cheese, 32 Fl. Oz.,Coffee mate French Vanilla Liquid Coffee Creamer 
 4.29,Reddi Wip Original Whipped Topping Made With Real Cream Spray Can - 6.5 Oz,($0.66 / Ounce),dairy-eggs-cheese, 6.5 Oz,Reddi Wip Original Whipped Topping Made With Real Cream Spray Can 
 6.99,Reddi Wip Original Whipped Topping Made With Real Cream Spray Can - 13 Oz,($0.54 / Ounce),dairy-eggs-cheese, 13 Oz,Reddi Wip Original Whipped Topping Made With Real Cream Spray Can 
-5.49,Organic Valley Milk Organic Reduced 2% Milk Fat - Half Gallon,($0.09 / Fl.oz),dairy-eggs-cheese, Half Gallon,Organic Valley Milk Organic Reduced 2% Milk Fat 
+0.09,Organic Valley Milk Organic Reduced 2% Milk Fat - Half Gallon,($0.09 / Fl.oz),dairy-eggs-cheese, Fl.oz,Organic Valley Milk Organic Reduced 2% Milk Fat - Half Gallon
 4.29,Blue Diamond Almonds Almond Breeze Milk Unsweetened Vanilla 30 Calories - 64 Fl. Oz.,($0.07 / Fl.oz),dairy-eggs-cheese, 64 Fl. Oz.,Blue Diamond Almonds Almond Breeze Milk Unsweetened Vanilla 30 Calories 
 5.79,Blue Diamond Almonds Almond Breeze Milk Vanilla Unsweetened - 96 Fl. Oz.,($0.06 / Fl.oz),dairy-eggs-cheese, 96 Fl. Oz.,Blue Diamond Almonds Almond Breeze Milk Vanilla Unsweetened 
 3.99,Country Crock Shedds Spread Buttery Spread 32% Vegetable Oil Calcium with Vitamin D - 15 Oz,($0.27 / Ounce),dairy-eggs-cheese, 15 Oz,Country Crock Shedds Spread Buttery Spread 32% Vegetable Oil Calcium with Vitamin D 
@@ -3284,52 +3284,52 @@ price,name_qnt,price_per_qnt,category,qnt,name
 6.99,O Organics Organic Butter Sweet Cream Unsalted 4 Count - 16 Oz,($0.44 / Ounce),dairy-eggs-cheese, 16 Oz,O Organics Organic Butter Sweet Cream Unsalted 4 Count 
 5.49,Brummel & Brown Spread 35% Vegetable Oil Nonfat Yogurt - 15 Oz,($0.37 / Ounce),dairy-eggs-cheese, 15 Oz,Brummel & Brown Spread 35% Vegetable Oil Nonfat Yogurt 
 17.99,Hormel Gatherings Hard Salami & Pepperoni Party Tray - 28 Oz.,($0.64 / Ounce),deli, 28 Oz.,Hormel Gatherings Hard Salami & Pepperoni Party Tray 
-19.99,Deli Catering Tray Fruit And Cheese 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup),($19.99 / Each),deli, Each ,Deli Catering Tray Fruit And Cheese 4 to 6 Servings 
-19.99,Deli Catering Tray Croissant Sandwich 4 to 6 Servings - Each (2190 Cal) (Please allow 48 hours for delivery or pickup),($19.99 / Each),deli, Each ,Deli Catering Tray Croissant Sandwich 4 to 6 Servings 
+19.99,Deli Catering Tray Fruit And Cheese 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup),($19.99 / Each),deli, Each,Deli Catering Tray Fruit And Cheese 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup)
+19.99,Deli Catering Tray Croissant Sandwich 4 to 6 Servings - Each (2190 Cal) (Please allow 48 hours for delivery or pickup),($19.99 / Each),deli, Each,Deli Catering Tray Croissant Sandwich 4 to 6 Servings - Each (2190 Cal) (Please allow 48 hours for delivery or pickup)
 59.99,Deli Catering Tray Classic Meat & Cheese 16 Inch Square Tray 20-24 Servings - Each (Please allow 48 hours for delivery or pickup),($59.99 / Each),deli, Each,Deli Catering Tray Classic Meat & Cheese 16 Inch Square Tray 20-24 Servings - Each (Please allow 48 hours for delivery or pickup)
-24.99,Deli Catering Tray Hye Roller 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup),($24.99 / Each),deli, Each ,Deli Catering Tray Hye Roller 4 to 6 Servings 
+24.99,Deli Catering Tray Hye Roller 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup),($24.99 / Each),deli, Each,Deli Catering Tray Hye Roller 4 to 6 Servings - Each (Please allow 48 hours for delivery or pickup)
 29.99,Deli Catering Tray Condiments 16-20 Servings - Each (Please allow 48 hours for delivery or pickup),($29.99 / Each),deli, Each,Deli Catering Tray Condiments 16-20 Servings - Each (Please allow 48 hours for delivery or pickup)
 3.99,ReadyMeal Tray Duo Sliced Salami & Cheddar With Crackers - Each,($3.99 / Each),deli, Each,ReadyMeal Tray Duo Sliced Salami & Cheddar With Crackers 
-13.99,Ready Meal Italian Style Charcuterie Small Tray - Each (Please allow 48 hours for delivery or pickup),($13.99 / Each),deli, Each ,Ready Meal Italian Style Charcuterie Small Tray 
-11.99,Ready Meal Nothing But Cheese Tray Small - EA (Please allow 24 hours for delivery or pickup),($11.99 / Each),deli, EA ,Ready Meal Nothing But Cheese Tray Small 
+13.99,Ready Meal Italian Style Charcuterie Small Tray - Each (Please allow 48 hours for delivery or pickup),($13.99 / Each),deli, Each,Ready Meal Italian Style Charcuterie Small Tray - Each (Please allow 48 hours for delivery or pickup)
+11.99,Ready Meal Nothing But Cheese Tray Small - EA (Please allow 24 hours for delivery or pickup),($11.99 / Each),deli, Each,Ready Meal Nothing But Cheese Tray Small - EA (Please allow 24 hours for delivery or pickup)
 3.99,Ready Meals Breakfast Quad With Guacamole Hard Boiled Egg - EA,($3.99 / Each),deli, EA,Ready Meals Breakfast Quad With Guacamole Hard Boiled Egg 
-34.99,Deli Catering Tray Chopped Salad Bowl - Each (Please allow 48 hours for delivery or pickup),($34.99 / Each),deli, Each ,Deli Catering Tray Chopped Salad Bowl 
+34.99,Deli Catering Tray Chopped Salad Bowl - Each (Please allow 48 hours for delivery or pickup),($34.99 / Each),deli, Each,Deli Catering Tray Chopped Salad Bowl - Each (Please allow 48 hours for delivery or pickup)
 9.49,BelGioioso Fresh Mozzarella Log Pre-Sliced Specialty Cheese - 16 Oz,($0.59 / Ounce),deli,16 Oz,BelGioioso Fresh Mozzarella Log Pre Sliced Specialty Cheese
 4.25,Boars Head Cheese American Yellow 33% Lower Fat / 36% Lower Sodium - 0.50 Lb,($8.49 / Lb),deli, 0.50 Lb,Boars Head Cheese American Yellow 33% Lower Fat / 36% Lower Sodium 
-6.99,Signature Cafe Traditional Whole Rotisserie Chicken Hot - Each  (Available After 10 AM),($0.25 / Ounce),deli, Each  ,Signature Cafe Traditional Whole Rotisserie Chicken Hot 
+0.25,Signature Cafe Traditional Whole Rotisserie Chicken Hot - Each  (Available After 10 AM),($0.25 / Ounce),deli, Ounce,Signature Cafe Traditional Whole Rotisserie Chicken Hot - Each  (Available After 10 AM)
 4.99,Resers Main St. Bistro Mashed Sweet Potato With Maple Syrup - 20 Oz,($0.25 / Ounce),deli, 20 Oz,Resers Main St. Bistro Mashed Sweet Potato With Maple Syrup 
-6.99,Signature Cafe Rosemary & Garlic Whole Rotisserie Chicken Hot - Each (Available After 10 AM),($0.23 / Ounce),deli, Each ,Signature Cafe Rosemary & Garlic Whole Rotisserie Chicken Hot 
-8.99,Open Nature Natural Whole Roasted Chicken Hot - 37 Oz (Available After 10 AM),($8.99 / Each),deli, 37 Oz ,Open Nature Natural Whole Roasted Chicken Hot 
-6.99,Signature Cafe Rotisserie Chicken No Salt Added Hot - Each (Available After 10 AM),($0.25 / Ounce),deli, Each ,Signature Cafe Rotisserie Chicken No Salt Added Hot 
-6.99,Signature Cafe Lemon Pepper Whole Rotisserie Chicken Hot - Each (Available After 10 AM),($0.23 / Ounce),deli, Each ,Signature Cafe Lemon Pepper Whole Rotisserie Chicken Hot 
+0.23,Signature Cafe Rosemary & Garlic Whole Rotisserie Chicken Hot - Each (Available After 10 AM),($0.23 / Ounce),deli, Ounce,Signature Cafe Rosemary & Garlic Whole Rotisserie Chicken Hot - Each (Available After 10 AM)
+8.99,Open Nature Natural Whole Roasted Chicken Hot - 37 Oz (Available After 10 AM),($8.99 / Each),deli, Each,Open Nature Natural Whole Roasted Chicken Hot - 37 Oz (Available After 10 AM)
+0.25,Signature Cafe Rotisserie Chicken No Salt Added Hot - Each (Available After 10 AM),($0.25 / Ounce),deli, Ounce,Signature Cafe Rotisserie Chicken No Salt Added Hot - Each (Available After 10 AM)
+0.23,Signature Cafe Lemon Pepper Whole Rotisserie Chicken Hot - Each (Available After 10 AM),($0.23 / Ounce),deli, Ounce,Signature Cafe Lemon Pepper Whole Rotisserie Chicken Hot - Each (Available After 10 AM)
 8.99,Signature Cafe General Tso Boneless Chicken Wings Per Pound Cold - 1.00 Lb,($8.99 / Lb),deli, 1.00 Lb,Signature Cafe General Tso Boneless Chicken Wings Per Pound Cold 
-8.99,Signature Cafe Homestyle Meatloaf Hot - 18 Oz (Available After 10 AM),($0.50 / Ounce),deli, 18 Oz ,Signature Cafe Homestyle Meatloaf Hot 
+0.50,Signature Cafe Homestyle Meatloaf Hot - 18 Oz (Available After 10 AM),($0.50 / Ounce),deli, Ounce,Signature Cafe Homestyle Meatloaf Hot - 18 Oz (Available After 10 AM)
 8.99,Giovanni Rana Single Serve Fettucini Chicken Florentine - 16 OZ,($0.56 / Ounce),deli, 16 OZ,Giovanni Rana Single Serve Fettucini Chicken Florentine 
 5.00,Boars Head SmokeMaster Beechwood Smoked Black Forest Ham - 0.50 Lb,($9.99 / Lb),deli, 0.50 Lb,Boars Head SmokeMaster Beechwood Smoked Black Forest Ham 
 7.00,Boars Head Simplicity All Natural Turkey Breast Roasted - 0.50 Lb,($13.99 / Lb),deli, 0.50 Lb,Boars Head Simplicity All Natural Turkey Breast Roasted 
 5.00,Boars Head Bold Turkey Breast Blackened Oven Roasted - 0.50 Lb,($9.99 / Lb),deli, 0.50 Lb,Boars Head Bold Turkey Breast Blackened Oven Roasted 
 5.49,King's Hawaiian Original Hawaiian Sweet Pre-Sliced Slider Buns - 11 Oz,($0.55 / Ounce),deli,11 Oz,King's Hawaiian Original Hawaiian Sweet Pre Sliced Slider Buns
 5.49,King's Hawaiian Original Hawaiian Sweet Pretzel Pre-Sliced Slider Buns - 11 Oz,($0.50 / Ounce),deli,11 Oz,King's Hawaiian Original Hawaiian Sweet Pretzel Pre Sliced Slider Buns
-13.99,Deli Catering Tray Artisan Charcuterie Salami And Cheese - 12 OZ (Please allow 48 hours for delivery or pickup),($1.17 / Ounce),deli, 12 OZ ,Deli Catering Tray Artisan Charcuterie Salami And Cheese 
+1.17,Deli Catering Tray Artisan Charcuterie Salami And Cheese - 12 OZ (Please allow 48 hours for delivery or pickup),($1.17 / Ounce),deli, Ounce,Deli Catering Tray Artisan Charcuterie Salami And Cheese - 12 OZ (Please allow 48 hours for delivery or pickup)
 7.49,Hot Pockets Deliwich Cheddar And Ham Frozen Deli Sandwich 4 Count - 12.9 Oz,($0.58 / Ounce),deli, 12.9 Oz,Hot Pockets Deliwich Cheddar And Ham Frozen Deli Sandwich 4 Count 
-6.49,Boars Head London Broil Roast Beef Slider 3 Count - Each (510 Cal),($6.49 / Each),deli, Each ,Boars Head London Broil Roast Beef Slider 3 Count 
-3.99,Signature Cafe Chicken Salad Croissant Sandwich - Each (1010 Cal),($3.99 / Each),deli, Each ,Signature Cafe Chicken Salad Croissant Sandwich 
-6.49,Boars Head Cracked Pepper Turkey & Smoked Gouda Artisan Sandwich - Each (470 Cal),($6.49 / Each),deli, Each ,Boars Head Cracked Pepper Turkey & Smoked Gouda Artisan Sandwich 
-6.49,Signature Cafe Large Roast Beef & Cheese Sub - 15 Oz (810 Cal),($6.49 / Each),deli, 15 Oz ,Signature Cafe Large Roast Beef & Cheese Sub 
-3.99,Signature Cafe Sustainable Tuna Salad Croissant Sandwich - Each (720 Cal),($3.99 / Each),deli, Each ,Signature Cafe Sustainable Tuna Salad Croissant Sandwich 
-6.49,AFC Sushi California Roll Special*- 7 Oz (Available After 11 AM),($0.93 / Ounce),deli, 7 Oz ,AFC Sushi California Roll Special*
-6.99,AFC Sushi California Salad Roll Special* - 7 Oz (Available After 11 AM),($1.00 / Ounce),deli, 7 Oz ,AFC Sushi California Salad Roll Special* 
-8.99,AFC Sushi Crunchy Roll Special* - 9 Oz (Available After 11 AM),($1.00 / Ounce),deli, 9 Oz ,AFC Sushi Crunchy Roll Special* 
-8.49,AFC Sushi Spicy Tuna Roll Special - 7 Oz (Available After 11 AM),($1.21 / Ounce),deli, 7 Oz ,AFC Sushi Spicy Tuna Roll Special 
-7.99,AFC Sushi Cream Cheese Roll Special* - 7 Oz (Available After 11 AM),($1.14 / Ounce),deli, 7 Oz ,AFC Sushi Cream Cheese Roll Special* 
-8.49,AFC Sushi Spicy Salmon Roll Special* - 7 Oz (Available After 11 AM),($1.21 / Ounce),deli, 7 Oz ,AFC Sushi Spicy Salmon Roll Special* 
-6.49,AFC Sushi Vegetable Combo Special* - 7 Oz (Available After 11 AM),($0.93 / Ounce),deli, 7 Oz ,AFC Sushi Vegetable Combo Special* 
-6.99,AFC Sushi Spicy California Roll Special* - 8 Oz (Available After 11 AM),($0.94 / Ounce),deli, 8 Oz ,AFC Sushi Spicy California Roll Special* 
-7.49,AFC Sushi Seaside Combo 16 Count - 8.25 Oz (Available After 11 AM),($0.90 / Ounce),deli, 8.25 Oz ,AFC Sushi Seaside Combo 16 Count 
+6.49,Boars Head London Broil Roast Beef Slider 3 Count - Each (510 Cal),($6.49 / Each),deli, Each,Boars Head London Broil Roast Beef Slider 3 Count - Each (510 Cal)
+3.99,Signature Cafe Chicken Salad Croissant Sandwich - Each (1010 Cal),($3.99 / Each),deli, Each,Signature Cafe Chicken Salad Croissant Sandwich - Each (1010 Cal)
+6.49,Boars Head Cracked Pepper Turkey & Smoked Gouda Artisan Sandwich - Each (470 Cal),($6.49 / Each),deli, Each,Boars Head Cracked Pepper Turkey & Smoked Gouda Artisan Sandwich - Each (470 Cal)
+6.49,Signature Cafe Large Roast Beef & Cheese Sub - 15 Oz (810 Cal),($6.49 / Each),deli, Each,Signature Cafe Large Roast Beef & Cheese Sub - 15 Oz (810 Cal)
+3.99,Signature Cafe Sustainable Tuna Salad Croissant Sandwich - Each (720 Cal),($3.99 / Each),deli, Each,Signature Cafe Sustainable Tuna Salad Croissant Sandwich - Each (720 Cal)
+0.93,AFC Sushi California Roll Special*- 7 Oz (Available After 11 AM),($0.93 / Ounce),deli, Ounce,AFC Sushi California Roll Special*- 7 Oz (Available After 11 AM)
+1.00,AFC Sushi California Salad Roll Special* - 7 Oz (Available After 11 AM),($1.00 / Ounce),deli, Ounce,AFC Sushi California Salad Roll Special* - 7 Oz (Available After 11 AM)
+1.00,AFC Sushi Crunchy Roll Special* - 9 Oz (Available After 11 AM),($1.00 / Ounce),deli, Ounce,AFC Sushi Crunchy Roll Special* - 9 Oz (Available After 11 AM)
+1.21,AFC Sushi Spicy Tuna Roll Special - 7 Oz (Available After 11 AM),($1.21 / Ounce),deli, Ounce,AFC Sushi Spicy Tuna Roll Special - 7 Oz (Available After 11 AM)
+1.14,AFC Sushi Cream Cheese Roll Special* - 7 Oz (Available After 11 AM),($1.14 / Ounce),deli, Ounce,AFC Sushi Cream Cheese Roll Special* - 7 Oz (Available After 11 AM)
+1.21,AFC Sushi Spicy Salmon Roll Special* - 7 Oz (Available After 11 AM),($1.21 / Ounce),deli, Ounce,AFC Sushi Spicy Salmon Roll Special* - 7 Oz (Available After 11 AM)
+0.93,AFC Sushi Vegetable Combo Special* - 7 Oz (Available After 11 AM),($0.93 / Ounce),deli, Ounce,AFC Sushi Vegetable Combo Special* - 7 Oz (Available After 11 AM)
+0.94,AFC Sushi Spicy California Roll Special* - 8 Oz (Available After 11 AM),($0.94 / Ounce),deli, Ounce,AFC Sushi Spicy California Roll Special* - 8 Oz (Available After 11 AM)
+0.90,AFC Sushi Seaside Combo 16 Count - 8.25 Oz (Available After 11 AM),($0.90 / Ounce),deli, Ounce,AFC Sushi Seaside Combo 16 Count - 8.25 Oz (Available After 11 AM)
 10.49,Advanced Fresh Concepts Sushi Crunchy Shrimp Tempura Roll*- 9 Oz,($1.17 / Ounce),deli, 9 Oz,Advanced Fresh Concepts Sushi Crunchy Shrimp Tempura Roll*
-8.99,AFC Sushi Spicy Salmon Roll Brown Rice* - 7 Oz (Available After 11 AM),($1.28 / Ounce),deli, 7 Oz ,AFC Sushi Spicy Salmon Roll Brown Rice* 
-4.29,AFC Shrimp Grilled Vegetables* - Each (Available After 11 AM),($0.72 / Ounce),deli, Each ,AFC Shrimp Grilled Vegetables* 
-21.49,AFC Chef Hybrid Ichi Sushi Platter* - 16 OZ (Available After 11 AM),($0.93 / Ounce),deli, 16 OZ ,AFC Chef Hybrid Ichi Sushi Platter* 
+1.28,AFC Sushi Spicy Salmon Roll Brown Rice* - 7 Oz (Available After 11 AM),($1.28 / Ounce),deli, Ounce,AFC Sushi Spicy Salmon Roll Brown Rice* - 7 Oz (Available After 11 AM)
+0.72,AFC Shrimp Grilled Vegetables* - Each (Available After 11 AM),($0.72 / Ounce),deli, Ounce,AFC Shrimp Grilled Vegetables* - Each (Available After 11 AM)
+0.93,AFC Chef Hybrid Ichi Sushi Platter* - 16 OZ (Available After 11 AM),($0.93 / Ounce),deli, Ounce,AFC Chef Hybrid Ichi Sushi Platter* - 16 OZ (Available After 11 AM)
 7.49,Lesley Stowe Raincoast Crisps Crackers Cranberry And Hazelnut - 5.3 Oz,($1.41 / Ounce),deli, 5.3 Oz,Lesley Stowe Raincoast Crisps Crackers Cranberry And Hazelnut 
 3.49,Valley Lahvosh Baking Co. Crackers Original Tree Shaped - 4.5 Oz,($0.78 / Ounce),deli, 4.5 Oz,Valley Lahvosh Baking Co. Crackers Original Tree Shaped 
 2.00,Ov Pink Himalayan Salt Chickpea Chips 3.75 Ounce Bag - 3.5 OZ,($0.53 / Ounce),deli, 3.5 OZ,Ov Pink Himalayan Salt Chickpea Chips 3.75 Ounce Bag 
@@ -3379,7 +3379,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 4.99,Pictsweet Farms Vegetables For Grilling Broccoli Florets Red Potatoes & Carrots - 12 Oz,($0.42 / Ounce),frozen-foods, 12 Oz,Pictsweet Farms Vegetables For Grilling Broccoli Florets Red Potatoes & Carrots 
 3.79,Birds Eye Steamfresh Broccoli Cauliflower & Carrots Frozen Vegetables - 10.8 Oz,($0.35 / Ounce),frozen-foods, 10.8 Oz,Birds Eye Steamfresh Broccoli Cauliflower & Carrots Frozen Vegetables 
 4.99,Pictsweet Farms Vegetables For Roasting Cauliflower Sweet Potatoes & Brussels Sprouts - 18 Oz,($0.28 / Ounce),frozen-foods, 18 Oz,Pictsweet Farms Vegetables For Roasting Cauliflower Sweet Potatoes & Brussels Sprouts 
-4.99,Hot Pockets Big & Bold Buffalo Style Chicken Sandwiches Box - 2 Counnt,($0.37 / Ounce),frozen-foods, 2 Counnt,Hot Pockets Big & Bold Buffalo Style Chicken Sandwiches Box 
+0.37,Hot Pockets Big & Bold Buffalo Style Chicken Sandwiches Box - 2 Counnt,($0.37 / Ounce),frozen-foods, Ounce,Hot Pockets Big & Bold Buffalo Style Chicken Sandwiches Box - 2 Counnt
 3.79,Hot Pockets Crispy Crust Premium Pepperoni Pizza Sandwiches - 2 Count,($0.42 / Ounce),frozen-foods, 2 Count,Hot Pockets Crispy Crust Premium Pepperoni Pizza Sandwiches 
 3.79,Hot Pockets Premium Garlic Buttery Crust Pepperoni Pizza Sandwiches - 2 Count,($0.42 / Ounce),frozen-foods, 2 Count,Hot Pockets Premium Garlic Buttery Crust Pepperoni Pizza Sandwiches 
 4.49,TGI Fridays Spinach & Artichoke Cheese Dip Frozen Snack Box - 8 Oz,($0.56 / Ounce),frozen-foods, 8 Oz,TGI Fridays Spinach & Artichoke Cheese Dip Frozen Snack Box 
@@ -3551,7 +3551,7 @@ price,name_qnt,price_per_qnt,category,qnt,name
 9.99,Open Nature Lamb Ground Lamb 85% Lean 15% Fat Grass Fed - 16 Oz,($0.62 / Ounce),meat-seafood, 16 Oz,Open Nature Lamb Ground Lamb 85% Lean 15% Fat Grass Fed 
 2.75,Meat Service Counter Open Nature Lamb Loin Chops 1 Count - 0.25 LB,($10.99 / Lb),meat-seafood, 0.25 LB,Meat Service Counter Open Nature Lamb Loin Chops 1 Count 
 6.99,Open Nature Lamb Shoulder Neck Slices Case Ready Imported - 1 LB,($6.99 / Lb),meat-seafood, 1 LB,Open Nature Lamb Shoulder Neck Slices Case Ready Imported 
-26.99,Meat Service Counter Open Nature Lamb Rib Roast French Imported - 1.50 Lbs.,($17.99 / Lb),meat-seafood, 1.50 Lbs.,Meat Service Counter Open Nature Lamb Rib Roast French Imported 
+17.99,Meat Service Counter Open Nature Lamb Rib Roast French Imported - 1.50 Lbs.,($17.99 / Lb),meat-seafood, Lb,Meat Service Counter Open Nature Lamb Rib Roast French Imported - 1.50 Lbs.
 39.99,Jack Daniel's Old No. 7 Tennessee Whiskey 80 Proof Bottle - 1.75 Liter,($0.69 / Fl.oz),wine-beer-spirits, 1.75 Liter,Jack Daniel's Old No. 7 Tennessee Whiskey 80 Proof Bottle 
 24.99,Makers Mark Whisky Bourbon Kentucky Straight 90 Proof - 750 Ml,($0.99 / Fl.oz),wine-beer-spirits, 750 Ml,Makers Mark Whisky Bourbon Kentucky Straight 90 Proof 
 76.99,The Balvenie Double Wood Malt Scotch Whisky 12 Year-Old 86 Proof - 750 Ml,($3.04 / Fl.oz),wine-beer-spirits,750 Ml,The Balvenie Double Wood Malt Scotch Whisky 12 Year Old 86 Proof
