@@ -28,7 +28,8 @@ def clean_price(money, keep=[]):
         return cleaned
 
     for char in money:
-        if char.isnumeric() or char in keep: cleaned += char
+        if char.isnumeric(): cleaned += char
+        elif char in keep: cleaned += char
     return cleaned
 
 def clean_qnt(qnt):
