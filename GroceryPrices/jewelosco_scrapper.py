@@ -50,27 +50,28 @@ class JewelOscoScrapper:
 
     # collect product info
     def collect_product_info(self, input_path, output_path):
-        product_data = []
+        all_products = []
         for url in self.extract_urls_from_csv(input_path):
-            temp_container = [url.split('/')[5]]
+            cur_category_prods = [url.split('/')[5]] # start list with category name
             soup = BeautifulSoup(self.get_page_source(url), 'html.parser')
             prod_count = int(soup.find('span', {'class':'category-count title-sm'}).text.strip()[1:-1]) # find total product count
             page_count = 1
 
-            while len(temp_container) < prod_count:
+            # loop through all the pages under current category
+            while len(cur_category_prods) < prod_count:
                 # combine lists with Tag objects into one big list
-                temp_container += soup.find_all('div', {'class':'product-card-container product-card-container--with-out-ar'})
+                cur_category_prods += soup.find_all('div', {'class':'product-card-container product-card-container--with-out-ar'})
                 page_count += 1
                 driver.get(f'{url}?sort=&page={str(page_count)}')
                 sleep(1)
                 
-            product_data += temp_container
+            all_products += cur_category_prods
 
         with open(output_path, mode='w') as file:
-            for datum in product_data:
+            for datum in all_products:
                 file.write(f'{datum}\n')
 
-        return product_data                   
+        return all_products                   
 
 if __name__ == '__main__':
     from selenium import webdriver
