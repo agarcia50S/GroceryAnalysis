@@ -17,9 +17,8 @@ def format_cookies(cookie_pairs):
      return formatted_pairs
 
 # query url and get json file with product data
-def request_from_api(url, key, val):
-    payload = {key:val}
-    response = requests.get(url, headers=payload)
+def request_from_api(url, url_params, req_headers, req_cookies):
+    response = requests.get(url, params=url_params, headers=req_headers, cookies=req_cookies)
     return response
 
 if __name__ == '__main__':
