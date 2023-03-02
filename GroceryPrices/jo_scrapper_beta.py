@@ -1,4 +1,5 @@
 import requests
+import json
 # make a url that can locate the results page of a given product
 # full url = base url + search parameter (i.e. item from grocery list)
 
