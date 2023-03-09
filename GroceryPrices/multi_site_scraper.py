@@ -1,30 +1,33 @@
 from time import sleep
-import urllib.parse
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 # scrape the entire page source of a website
 class GroceryScraper:
-    def __init__(self, driver, all_websites=None):
+    def __init__(self, driver, grocery_list=None, all_websites=None):
         if all_websites is None: self.all_websites = []
         else: self.all_websites = all_websites
 
+        if grocery_list is None: self.grocery_list = grocery_list
+        else: self.grocery_list = grocery_list
+
         self.driver = driver
+        self.all_products = {}
 
     def _main(self):
         # Incomplete
 
-        
         for website in self.all_websites:
             html = self._get_page_source(website)
-        
+            self.all_products[] = self.format_as_table(html)
 
-    def _extract(self, html):
+    def _extract(self, html, selector):
         '''
         Takes a single html element that contains the name, quantity, and price 
         of a given product
         '''
         soup = BeautifulSoup(html, 'html.parser')
-        data = soup.select()
+        data = soup.select(selector)
         return [datum.text for datum in data]
     
     def format_as_table(self, html_elements):
@@ -33,7 +36,7 @@ class GroceryScraper:
         quantity for a given grocery product. Returns a table in the following 
         format: [[name-quantity_1, price_1], ..., [name-quantity_n, price_n]]
         '''
-        return [self.get_data_from_html(elmnt) for elmnt in html_elements]
+        return [self._extract(elmnt) for elmnt in html_elements]
 
     def _get_page_source(self, website):
         
@@ -42,6 +45,12 @@ class GroceryScraper:
         if len(website["cookies"]) > 0: self.share_cookies(website["cookies"])
         self.driver.refresh()
         return self.driver.page_source
+
+    def parsable_url(self):
+        '''
+        Makes all of the urls into urlparse objects so that the grocery list
+        items can be added to the query string
+        '''
 
     def _share_cookies(self, jar):
         '''
@@ -54,14 +63,6 @@ class GroceryScraper:
         else:
             for cookie in jar:
                 self.driver.add_cookie(cookie)
-        
-class ProductCardParser:
-    def __init__(self, product_cards):
-        self.product_card = product_cards
-
-
-
-
 
 if __name__ == '__main__':
     from urllib.parse import urlparse
