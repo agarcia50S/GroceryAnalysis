@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 class GroceryScraper:
     def __init__(self, driver, grocery_list=None, all_websites=None):
         if all_websites is None: self.all_websites = []
-        else: self.all_websites = self.parse_urls(all_websites) # make urlparse objs
+        else: self.all_websites = self._parse_urls(all_websites) # make urlparse objs
 
         if grocery_list is None: self.grocery_list = grocery_list
         else: self.grocery_list = grocery_list
@@ -46,7 +46,7 @@ class GroceryScraper:
         self.driver.refresh()
         return self.driver.page_source
 
-    def parse_urls(self):
+    def _parse_urls(self):
         '''
         Makes all of the urls into urlparse objects so that the grocery list
         items can be added to the query string
