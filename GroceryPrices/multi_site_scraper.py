@@ -46,11 +46,13 @@ class GroceryScraper:
         self.driver.refresh()
         return self.driver.page_source
 
-    def parsable_url(self):
+    def parse_urls(self):
         '''
         Makes all of the urls into urlparse objects so that the grocery list
         items can be added to the query string
         '''
+        for website in self.all_websites:
+            website["url"] = urlparse(website["url"])
 
     def _share_cookies(self, jar):
         '''
