@@ -55,11 +55,13 @@ class GroceryScraper:
             website["url"] = urlparse(website["url"])
 
     def add_website_info(self, url, selector, cookie=None):
-        self.all_websites.append({
+        self.all_websites.append(
+            {
             "url": url,
             "selector": selector,
             "cookie": cookie
-        })
+            }
+        )
 
     def _share_cookies(self, jar):
         '''
