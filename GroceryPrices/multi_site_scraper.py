@@ -15,6 +15,10 @@ def get_netloc_name(url):
     if len(parts) < 3: return parts[0]
     else: return parts[1]
     
+def make_url_query(url, search_term):
+    query_string = f"{url.query}{search_term}"
+    return urlunparse(url)
+
 # scrape the entire page source of a website
 class GroceryScraper:
     def __init__(self, driver, grocery_list=None, all_websites=None):
