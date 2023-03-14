@@ -2,6 +2,16 @@ from time import sleep
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
+# utility functions
+
+def get_netloc_name(url):
+    '''
+    Takes urlparse obj and parses the netloc attr to get the netloc "name"
+    '''
+    parts = url.netloc.split('.')
+    if len(parts) < 3: return parts[0]
+    else: return parts[1]
+    
 # scrape the entire page source of a website
 class GroceryScraper:
     def __init__(self, driver, grocery_list=None, all_websites=None):
