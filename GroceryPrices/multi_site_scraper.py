@@ -37,8 +37,24 @@ class GroceryScraper:
         # Incomplete
 
         for website in self.all_websites:
-            html = self._get_page_source(website)
-            self.all_products[] = self.format_as_table(html)
+            # get company name
+            store_name = get_netloc_name(website['url'])
+
+            for item in self.grocery_list:
+                # add item to website url's query string
+                url = make_url_query(website['url'])
+
+                html = self._get_page_source(website, url)
+
+                # parse product name, quantity, and price
+                product_data = self._extract(html)
+
+                # associate company name, item name, and product data
+                item_info = (store_name, item, product_data)
+            
+                self.all_products.append(item_info)
+                
+        return self.all_products
 
     def _extract(self, html, selector):
         '''
