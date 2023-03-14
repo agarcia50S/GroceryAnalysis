@@ -8,6 +8,9 @@ def get_netloc_name(url):
     '''
     Takes urlparse obj and parses the netloc attr to get the netloc "name"
     '''
+    if not isinstance(url, ParseResult):
+        url = urlparse(url)
+    
     parts = url.netloc.split('.')
     if len(parts) < 3: return parts[0]
     else: return parts[1]
