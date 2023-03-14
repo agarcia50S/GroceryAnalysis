@@ -16,7 +16,7 @@ def get_netloc_name(url):
     else: return parts[1]
     
 def make_url_query(url, search_term):
-    query_string = f"{url.query}{search_term}"
+    url.query = f"{url.query}{search_term}"
     return urlunparse(url)
 
 # scrape the entire page source of a website
