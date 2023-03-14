@@ -73,9 +73,9 @@ class GroceryScraper:
         '''
         return [self._extract(elmnt) for elmnt in html_elements]
 
-    def _get_page_source(self, website):
+    def _get_page_source(self, website, url):
         
-        self.driver.get(website["url"])
+        self.driver.get(url)
         sleep(3)
         if len(website["cookies"]) > 0: self.share_cookies(website["cookies"])
         self.driver.refresh()
