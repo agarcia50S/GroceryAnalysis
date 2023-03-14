@@ -29,7 +29,9 @@ class GroceryScraper:
         else: self.grocery_list = grocery_list
 
         self.driver = driver
-        self.all_products = {}
+        
+        # container with product data from each website
+        self.all_products = []
 
     def _main(self):
         # Incomplete
