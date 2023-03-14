@@ -1,5 +1,5 @@
 from time import sleep
-from urllib.parse import urlparse
+from urllib.parse import *
 from bs4 import BeautifulSoup
 
 # utility functions
@@ -27,7 +27,6 @@ class GroceryScraper:
 
         if grocery_list is None: self.grocery_list = grocery_list
         else: self.grocery_list = grocery_list
-
         self.driver = driver
         
         # container with product data from each website
