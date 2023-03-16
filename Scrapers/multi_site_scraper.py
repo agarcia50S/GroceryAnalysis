@@ -55,15 +55,24 @@ class GroceryScraper:
                 
         return self.all_products
 
-    def _extract(self, html, selector):
+    def _extract(self, bs4_tags, website):
         '''
-        Takes a single html element that contains the name, quantity, and price 
-        of a given product
+        Takes list of bs4.element.Tag (i.e. html elements that comprise the websites
+        product cards) and iterate over it. In each loop, it uses .select() on the Tag
+        object to find html elements based on css selectors 
+        (i.e. website["product_data_css"]), extracts the text, and adds them to a list.
+        The list's items are joined into a list on ",".
         '''
-        soup = BeautifulSoup(html, 'html.parser')
-        data = soup.select(selector)
-        return [datum.text for datum in data]
-    
+        return [
+	
+        ",".join(
+
+        [element.text for element in tag.select(website["product_data_css"])]
+
+        ) for tag in bs4_tags
+
+        ]
+
     def format_as_table(self, html_elements):
         '''
         Takes list of html elements. Each element contains the name, price, and 
