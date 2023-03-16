@@ -45,13 +45,22 @@ driver.quit()
 soup = BeautifulSoup(html, 'html.parser')
 product_cards = soup.select(prod_card_selector)[:]
 
-prod_data = []
+prod_data = [
+	
+	",".join(
 
-for product in product_cards:
-	temp_holder = []
-	for element in product.select(prod_data_selector):
-		temp_holder.append(element.text)
-	prod_data.append(",".join(temp_holder))
+	[
+	element.text 
+	for element in product.select(prod_data_selector)
+	]
+
+	) for product in product_cards
+
+	]
+
+# for product in product_cards:
+# 	temp_holder = [element.text for element in product.select(prod_data_selector)]
+	# prod_data.append(",".join(temp_holder))
 
 print(prod_data)
 # print([datum.text for datum in data])
