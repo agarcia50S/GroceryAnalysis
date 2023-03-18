@@ -54,7 +54,7 @@ class GroceryScraper:
                 product_cards = soup.select(website['product_card_css'])
 
                 # parse product name, quantity, and price
-                product_data = self._extract(product_cards)
+                product_data = self._extract(product_cards, website)
 
                 # associate company name, item name, and product data
                 item_info = (store_name, item, product_data)
