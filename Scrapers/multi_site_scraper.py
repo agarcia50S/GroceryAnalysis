@@ -95,6 +95,7 @@ class GroceryScraper:
         sleep(3)
         if len(website["cookies"]) > 0: self._share_cookies(website["cookies"])
         self.driver.refresh()
+        sleep(8)
         return self.driver.page_source
 
     def _parse_urls(self):
