@@ -120,7 +120,7 @@ class GroceryScraper:
             {
             "url": url,
             "selector": selector,
-            "cookie": cookie,
+            "cookies": cookie,
             "product_card_css": product_card_css,
             "product_data_css": product_data_css
             }
