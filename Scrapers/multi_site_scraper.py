@@ -16,8 +16,9 @@ def get_netloc_name(url):
     else: return parts[1]
     
 def make_url_query(url, search_term):
-    url.query = f"{url.query}{search_term}"
-    return urlunparse(url)
+    query_param = url.query
+    new_url = url._replace(query=query_param + search_term).geturl()
+    return new_url
 
 # scrape the entire page source of a website
 class GroceryScraper:
