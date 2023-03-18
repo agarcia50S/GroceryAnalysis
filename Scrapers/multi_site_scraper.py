@@ -16,8 +16,18 @@ def get_netloc_name(url):
     else: return parts[1]
     
 def make_url_query(url, search_term):
-    query_param = url.query
-    new_url = url._replace(query=query_param + search_term).geturl()
+
+    # find position to add search term in
+    idx = 0
+    char = url.query[idx]
+    while char != "=":
+        idx += 1
+        char = url.query[idx]
+
+    # add search term to the url's query string
+    full_query = f"{url.query[:idx + 1]}{search_term}{url.query[idx + 1:]}"
+
+    new_url = url._replace(query=full_query).geturl()
     return new_url
 
 # scrape the entire page source of a website
