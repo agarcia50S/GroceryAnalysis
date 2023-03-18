@@ -140,10 +140,52 @@ class GroceryScraper:
                 self.driver.add_cookie(cookie)
 
 if __name__ == '__main__':
-    from urllib.parse import urlparse
-    urls =  [
-        "https://www.jewelosco.com/shop/search-results.html?q=",
-        "https://www.traderjoes.com/home/search?q=&section=products&global=no",
-        "https://www.target.com/s?searchTerm=&sortBy=relevance&category=5xt1a",
-        "https://www.tonysfreshmarket.com/shop#!/?q="
+    from selenium import webdriver
+    # urls =  [
+    #     "https://www.jewelosco.com/shop/search-results.html?q=",
+    #     "https://www.traderjoes.com/home/search?q=&section=products&global=no",
+    #     "https://www.target.com/s?searchTerm=&sortBy=relevance&category=5xt1a",
+    #     "https://www.tonysfreshmarket.com/shop#!/?q="
+    # ]
+    #     "https://www.traderjoes.com/home/search?q=jasmine+rice&section=products&global=no": "article.SearchResultCard_searchResultCard__3V-_h",
+    #     "https://www.target.com/s?searchTerm=jasmine+rice&sortBy=relevance&category=5xt1a": "div.styles__StyledDetailsWrapper-sc-1iglypx-1.bgKEdY"
+
+    grocery_sites = [
+            {
+            "url": "https://www.jewelosco.com/shop/search-results.html?q=",
+            "selector": "div.product-card-container.product-card-container--with-out-ar",
+            "cookies": [],
+            "product_card_css": "div.product-card-container.product-card-container--with-out-ar",
+            "product_data_css": "a.product-title__name,span[data-qa=prd-itm-prc],div[data-qa=prd-itm-pprc-qty]"
+            },
+            
+            {
+            "url": "https://www.tonysfreshmarket.com/shop?q=",
+            "selector": "div.fp-item-name.notranslate,",
+            "cookies": [
+        
+                {"name":"_ga", "value": "GA1.1.907722779.1678302301"},
+                {"name": "_ga_0MCW5VWV52", "value": "GS1.1.1678302311.1.0.1678302316.0.0.0"},
+                {"name": "_ga_2CFGBMWTYQ", "value": "GS1.1.1678302301.1.1.1678302316.0.0.0"},
+                {"name": "fp-history", "value": '{"0":{"name":"shop","stateParams":{"q":"jasmine rice"}},"1":{"name":"store-locator"}}'},
+                {"name": "fp-pref",	"value": '{"store_id":"5809"}'},
+                {"name": "fp-session", "value": '{"token":"f44f6ef2fc1b992b282996fc3920e947"}'},
+                {"name": "SGPBShowingLimitationDomain670", "value": '{"openingCount":1,"openingPage":""}'}
+
+                ],
+            "product_card_css": "li.fp-item.fp-item-fixed_price",
+            "product_data_css": "div.fp-item-name.notranslate,span.fp-item-base-price,span.fp-item-size"
+            }
     ]
+
+    my_list = ['jasmine rice']
+
+    wd = webdriver.Chrome()
+    test_bot = GroceryScraper(driver=wd, 
+                              grocery_list=my_list, 
+                              all_websites=grocery_sites)
+    
+    data = test_bot._main()
+    print(data)
+    wd.quit()
+    
