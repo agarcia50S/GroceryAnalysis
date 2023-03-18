@@ -105,7 +105,7 @@ class GroceryScraper:
         for website in self.all_websites:
             website["url"] = urlparse(website["url"])
 
-    def add_website_info(self, url, selector, cookie=None):
+    def add_website_info(self, url, selector, product_card_css, product_data_css, cookie=None):
         '''
         Takes the url, css selectors (to find the product data), optionally, the
         cookies of a single website and them to a list with all of the websites
@@ -120,7 +120,9 @@ class GroceryScraper:
             {
             "url": url,
             "selector": selector,
-            "cookie": cookie
+            "cookie": cookie,
+            "product_card_css": product_card_css,
+            "product_data_css": product_data_css
             }
         )
 
