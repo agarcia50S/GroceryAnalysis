@@ -23,8 +23,11 @@ def make_url_query(url, search_term):
 # scrape the entire page source of a website
 class GroceryScraper:
     def __init__(self, driver, grocery_list=None, all_websites=None):
-        if all_websites is None: self.all_websites = []
-        else: self.all_websites = self._parse_urls(all_websites) # make urlparse objs
+        if all_websites is None: 
+            self.all_websites = []
+        else: 
+            self.all_websites = all_websites
+            self._parse_urls() # make urlparse objs
 
         if grocery_list is None: self.grocery_list = grocery_list
         else: self.grocery_list = grocery_list
