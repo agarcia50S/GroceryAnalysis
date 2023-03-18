@@ -45,7 +45,7 @@ class GroceryScraper:
 
             for item in self.grocery_list:
                 # add item to website url's query string
-                url = make_url_query(website['url'])
+                url = make_url_query(website['url'], item)
 
                 html = self._get_page_source(website, url)
 
