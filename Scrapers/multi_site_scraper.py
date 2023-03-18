@@ -116,21 +116,19 @@ class GroceryScraper:
         for website in self.all_websites:
             website["url"] = urlparse(website["url"])
 
-    def add_website_info(self, url, selector, product_card_css, product_data_css, cookie=None):
+    def add_website_info(self, url, product_card_css, product_data_css, cookie=None):
         '''
         Takes the url, css selectors (to find the product data), optionally, the
         cookies of a single website and them to a list with all of the websites
         info.
 
         url -- string
-        selector -- string
         cookie -- list of dictionary's with each dict representing one 
                   cookie-value pair {'name':'cookie's name', 'value':'cookie's value'}
         '''
         self.all_websites.append(
             {
             "url": url,
-            "selector": selector,
             "cookies": cookie,
             "product_card_css": product_card_css,
             "product_data_css": product_data_css
@@ -163,7 +161,6 @@ if __name__ == '__main__':
     grocery_sites = [
             {
             "url": "https://www.jewelosco.com/shop/search-results.html?q=",
-            "selector": "div.product-card-container.product-card-container--with-out-ar",
             "cookies": [],
             "product_card_css": "div.product-card-container.product-card-container--with-out-ar",
             "product_data_css": "a.product-title__name,span[data-qa=prd-itm-prc],div[data-qa=prd-itm-pprc-qty]"
@@ -171,7 +168,6 @@ if __name__ == '__main__':
             
             {
             "url": "https://www.tonysfreshmarket.com/shop?q=",
-            "selector": "div.fp-item-name.notranslate,",
             "cookies": [
         
                 {"name":"_ga", "value": "GA1.1.907722779.1678302301"},
