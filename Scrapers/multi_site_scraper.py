@@ -181,7 +181,21 @@ if __name__ == '__main__':
                 ],
             "product_card_css": "li.fp-item.fp-item-fixed_price",
             "product_data_css": "div.fp-item-name.notranslate,span.fp-item-base-price,span.fp-item-size"
-            }
+            },
+
+            {
+            "url": "https://www.target.com/s?searchTerm=&sortBy=relevance&category=5xt1a",
+            "cookies": [],
+            "product_card_css": "div[data-test=product-details]",
+            "product_data_css": "a[data-test=product-title],span[data-test=current-price]"
+            },
+
+            {
+            "url": "https://www.traderjoes.com/home/search?q=&section=products&global=no",
+            "cookies": [],
+            "product_card_css": "article.SearchResultCard_searchResultCard__3V-_h",
+            "product_data_css": "a.Link_link__1AZfr.SearchResultCard_searchResultCard__titleLink__2nz6x,span.ProductPrice_productPrice__price__3-50j,span.ProductPrice_productPrice__unit__2jvkA"
+            }  
     ]
 
     my_list = ['jasmine rice']
