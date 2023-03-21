@@ -4,6 +4,20 @@ from bs4 import BeautifulSoup
 
 # utility functions
 
+def format_cookie(cookie_seq):
+    '''
+    Takes sequence of cookies (e.g. name1=value1; name2=value2; ...; nameX=valueX)
+    and formats them into a structure that works with selenium 
+    (i.e. [{'name':name1, 'value':value1}, {'name':name2, 'value':value2}] )
+    '''
+    cookie_pairs = cookie_seq.split(';')
+
+    # list of dicts where values are cookie name and cookie value, respectively
+    formatted = [{'name': pair.strip().split('=')[0], 'value':pair.strip().split('=')[1]} for pair in cookie_pairs]
+    return formatted
+    
+        
+
 def get_netloc_name(url):
     '''
     Takes urlparse obj and parses the netloc attr to get the netloc "name"
