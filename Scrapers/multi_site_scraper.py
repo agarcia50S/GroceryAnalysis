@@ -165,15 +165,6 @@ class GroceryScraper:
 
 if __name__ == '__main__':
     from selenium import webdriver
-    # urls =  [
-    #     "https://www.jewelosco.com/shop/search-results.html?q=",
-    #     "https://www.traderjoes.com/home/search?q=&section=products&global=no",
-    #     "https://www.target.com/s?searchTerm=&sortBy=relevance&category=5xt1a",
-    #     "https://www.tonysfreshmarket.com/shop#!/?q="
-    # ]
-    #     "https://www.traderjoes.com/home/search?q=jasmine+rice&section=products&global=no": "article.SearchResultCard_searchResultCard__3V-_h",
-    #     "https://www.target.com/s?searchTerm=jasmine+rice&sortBy=relevance&category=5xt1a": "div.styles__StyledDetailsWrapper-sc-1iglypx-1.bgKEdY"
-  
     grocery_sites = [
             {
             "url": "https://www.jewelosco.com/shop/search-results.html?q=",
