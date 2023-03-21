@@ -208,7 +208,7 @@ if __name__ == '__main__':
             "url": "https://new.aldi.us/results?query=",
             "cookies": [],
             "product_card_css": "div.product-teaser-item.product-grid__item",
-            "product_data_css": "div.product-tile__name,div.base-price__regular"
+            "product_data_css": "div.product-tile__name,span.base-price__regular"
             }        
     ]
 
