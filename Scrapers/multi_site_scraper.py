@@ -32,7 +32,7 @@ def get_netloc_name(url):
 def make_url_query(url, search_term):
     # check if url even has query component
     if len(url.query) < 1:
-        return url._replace(path=url.path + search_term).get_url()
+        return url._replace(path=url.path + search_term).geturl()
     # find position to add search term in
     idx = 0
     char = url.query[idx]
