@@ -211,8 +211,7 @@ if __name__ == '__main__':
             "product_data_css": "div.product-tile__name,span.base-price__regular"
             }        
     ]
-
-    my_list = ['jasmine rice']
+    my_list = ['jasmine rice', 'Pineapple', 'Apples', 'Blueberries']
 
     wd = webdriver.Chrome()
     test_bot = GroceryScraper(driver=wd, 
