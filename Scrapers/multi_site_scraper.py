@@ -197,7 +197,14 @@ if __name__ == '__main__':
             "cookies": [],
             "product_card_css": "article.SearchResultCard_searchResultCard__3V-_h",
             "product_data_css": "a.Link_link__1AZfr.SearchResultCard_searchResultCard__titleLink__2nz6x,span.ProductPrice_productPrice__price__3-50j,span.ProductPrice_productPrice__unit__2jvkA"
-            }  
+            },
+
+            {
+            "url": "https://new.aldi.us/results?query=",
+            "cookies": [],
+            "product_card_css": "div.product-teaser-item.product-grid__item",
+            "product_data_css": "div.product-tile__name,div.base-price__regular"
+            }        
     ]
 
     my_list = ['jasmine rice']
